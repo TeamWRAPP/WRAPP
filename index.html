@@ -30,6 +30,7 @@
 <!--   
    <h1 id="title">Website Readiness Assessment & Planning Prototype</h1> -->
   
+
    <hr>
   
    <div class="progress">
@@ -2430,12 +2431,14 @@ var MyList = document.getElementById('list');
 MyList.innerHTML = kk;
 // alert(kk);
 
-
+post();
 
 };
-function sendResults() {
 
-var today = new Date();
+
+function post() {
+
+              var today = new Date();
 var dd = today.getDate();
 var mm = today.getMonth()+1; //January is 0!
 var yyyy = today.getFullYear();
@@ -2450,8 +2453,6 @@ if(mm<10) {
 
 today = mm+'/'+dd+'/'+yyyy;
 
-
-function post() {
               var date = today;
               title = $('input[name="title"]').val();
               url = $('input[name="url"]').val();
@@ -2465,10 +2466,11 @@ function post() {
               var P7 = tp7;
               var P8 = tp8;
               var OS = total;
-$.post('insertResult.php',{postD:date,postTITLE:title,postURL:url,postNAME:name,postP1:P1,postP2:P2,postP3:P3,postP4:P4,postP5:P5,postP6:P6,postP7:P7,postP8:P8,postOS:OS}, 
+$.post('insertResult.php',{postD:date,postTITLE:title,postURL:url,postNAME:name,postP1:P1,postP2:P2,postP3:P3,postP4:P4,postP5:P5,postP6:P6,postP7:P7,postP8:P8,postOS:OS})
                              // function(result) {
                              //               alert(result);
                              // });
+
 };
 
 
