@@ -1,0 +1,2485 @@
+
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta http-equiv="content-type" content="text/html; charset=UTF-8"> 
+        <title>WRAPP</title>
+        <meta name="generator" content="WRAPP" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+        <meta name="description" content="Bootstrap How to make a simple wizard, workflow or sequence to steps using the Bootstrap tabs and the progress bar to show progress. example snippet f" />
+        <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" type="text/css" href="wrappstyle.css">
+      <link rel="stylesheet" href="https://cdn.jsdelivr.net/g/sweetalert2@4.0.15(sweetalert2.min.css+sweetalert2.css)">
+      <script src="https://cdn.jsdelivr.net/g/sweetalert2@4.0.15(sweetalert2.min.js+sweetalert2.js)"></script>
+        <!--[if lt IE 9]>
+          <script src="//html5shim.googlecode.com/svn/trunk/html5.js"></script>
+        <![endif]-->
+      <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/jquery/2.0.2/jquery.min.js"></script>
+
+      <script type='text/javascript' src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.1/angular.min.js"></script>
+
+     
+      <script type='text/javascript' src="https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    </head>
+    
+    <!-- HTML code from Bootply.com editor -->
+    
+    <body  >
+        
+        <div class="container" id="myWizard" ng-app="myApp" ng-controller="Main">
+<!--   
+   <h1 id="title">Website Readiness Assessment & Planning Prototype</h1> -->
+  
+   <hr>
+  
+   <div class="progress">
+     <div class="progress-bar progress-bar-success" role="progressbar" aria-valuenow="1" aria-valuemin="1" aria-valuemax="9" style="width: 10%;">
+       Step 1 of 10
+     </div>
+   </div>
+   <hr>
+  <div class="well" id="navy">
+   <div class="navbar">
+      <div class="navbar-inner">
+            <ul class="nav nav-tabs">
+               <li class="active"><a href="#step1" data-toggle="tab" data-step="1">Welcome</a></li>
+               <li><a href="#step2" data-toggle="tab" data-step="2">P1</a></li>
+               <li><a href="#step3" data-toggle="tab" data-step="3">P2</a></li>
+               <li><a href="#step4" data-toggle="tab" data-step="4">P3</a></li>
+               <li><a href="#step5" data-toggle="tab" data-step="5">P4</a></li>
+               <li><a href="#step6" data-toggle="tab" data-step="6">P5</a></li>
+               <li><a href="#step7" data-toggle="tab" data-step="7">P6</a></li>
+               <li><a href="#step8" data-toggle="tab" data-step="8">P7</a></li>
+               <li><a href="#step9" data-toggle="tab" data-step="9">P8</a></li>
+               <li><a href="#step10" data-toggle="tab" data-step="10">Results</a></li>
+            </ul>
+      </div>
+   </div>
+   </div>
+   <hr>
+   <div class="tab-content">
+      <div class="tab-pane fade in active" id="step1">
+         
+        <div class="well">
+
+       <h1 class="ptitle">Welcome!</h1>
+        <br>
+          
+<p id="instructions">Please answer the following questions to the best of your ability. Some questions may require the use of external tools or resources, for those of which a link and/or an abstract is provided. If there are any concerns or need for further clarification, please feel free to contact us at: <a href="mailto:bahteamwrapp@gmail.com">bahteamwrapp@gmail.com</a>.</p>
+
+<p id="important">To begin, identify the website's site offering(s) and target audience demographic(s) below. Please note that more than one checkbox may be chosen.
+</p>
+
+<br>
+<div class="formdivs" id="offerings">
+ 
+    <label>Site Offering(s):</label>
+    <br><input type="checkbox" ng-model="inforesource" name="offer" value="information/resources" class="cbox" id="chkBox1">Information/resources
+  <input type="checkbox" ng-model="formsfiling" name="offer" value="forms/filing" class="cbox" id="chkBox2">Forms/filing
+  <input type="checkbox" ng-model="ecommercetransaction" name="offer" value="ecommerce/transaction" class="cbox" id="chkBox3">E-commerce/transaction
+  <br><input type="checkbox" ng-model="jobscareers" name="offer" value="jobs/careers" class="cbox" id="chkBox4">Jobs/careers
+  <input type="checkbox" ng-model="informationportal" name="offer" value="information portal" class="cbox" id="chkBox5">Information Portal
+  <input type="checkbox" ng-model="communityportal" name="offer" value="communitybased portal" class="cbox" id="chkBox6">Community-based Portal
+
+
+ 
+</div>
+<br>
+<br>
+
+<div class="formdivs" id="demos">
+
+   <label>Target Audience Demographic(s):</label>
+  <br>
+  <p>
+  Please note that the target demographic is the audience the website is aiming to reach, not necessarily the audience it currently engages.
+  </p>  
+
+  <input type="checkbox" ng-model="children" name="audiencedemo" value="Children" class="cbox" id="chkBox7">Children (17 & younger)
+  <input type="checkbox" ng-model="geny" name="audiencedemo" value="Gen Y" class="cbox" id="chkBox8">Gen Y (18-30)
+  <input type="checkbox" ng-model="genx" name="audiencedemo" value="Gen X" class="cbox" id="chkBox9">Gen X (31-60)
+  <br><input type="checkbox" ng-model="babyboomers" name="audiencedemo" value="Baby Boomers"class="cbox" id="chkBox10">Baby Boomers (61-75)
+  <input type="checkbox" ng-model="seniors" name="audiencedemo" Vaule="Seniors" class="cbox" id="chkBox11">Seniors (75+)
+  <input type="checkbox" ng-model="allages" name="audiencedemo" value="All Ages" class="cbox" id="chkBox12">All Ages
+</div>
+<br>
+<br>
+
+<div>
+
+Enter URL: <input type="text" ng-model="url" name="url" placeholder=" www." required>
+
+<br><br>
+
+Enter Email: <input type="text" ng-model="email" name="name" placeholder=" " required>
+
+<br><br>
+
+Enter Company/Agency's Name:<input type="text" ng-model="name" name="title" placeholder=" " required>
+
+</div>
+            
+        </div>
+        <div class="startova">
+        <a class="btn btn-success first" href="" onClick="window.location.reload()" data-ng-click="goNext(0)">Start over</a>
+         </div>
+         <img src="wrapplogo.png" alt="WRAPP Logo" class="wrapplogo">
+        <img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" class="boozlogo">
+       <div class="continue">
+       <a class="btn btn-default next" href="" onclick="info()" data-ng-click="goNext(1)">Continue</a>
+       </div>
+      </div>
+      
+
+
+
+      <div class="tab-pane fade" id="step2" ng-submit="GoNext(2)">
+         <div class="well"> 
+          <h1 class="ptitle">Pillar 1 - Accessibility</h1>
+   
+
+            <div class="formdivs" id="responsive">
+<h2>1.1 - Responsiveness</h2>
+
+  <p>Does the website receive a score of 85 or greater in the "Mobile Friendliness" category on Google's <a href="https://testmysite.thinkwithgoogle.com/" target="_blank">PageSpeed Insights tool</a>?<br>
+  <span class="readit">When inserting the URL of the website on PageSpeed Insights, make sure to include the http or https. (e.g. http://www.benefits.gov)</span></breaktext>
+  <div class="answers" ng-init="responsive=.5">
+    <input type="radio" name="responsive" ng-model="responsive" required value=".5"> Yes
+    <input type="radio" name="responsive" ng-model="responsive" required value="0"> No
+  </div>
+  <p class="abstract">PageSpeed Insights measures the performance of a page for mobile devices and desktop devices.</p>
+
+</div>
+
+<div class="formdivs" id="multiling">
+<h2>1.2 - Multinational</h2>
+
+  <p>Does the website have a multilingual feature?</p>
+  <div class="answers" ng-init="multiling=.025">
+    <input type="radio" name="multiling" ng-model="multiling" required value=".025"> Yes
+    <input type="radio" name="multiling" ng-model="multiling" required value="0"> No
+    </div>
+
+  <p>Does the website adapt metrics, timezone and/or date format to specific countries? (Please check all those that apply)</p>
+  <div class="answers" ng-init="none=0">
+    <input type="checkbox" ng-model="metrics" name="adapt" value=".025" class="chkbox" id="ckBox1">Metrics
+    <input type="checkbox" ng-model="timezone" name="adapt" value=".025" class="chkbox" id="ckBox2">Timezone
+    <input type="checkbox" ng-model="date" name="adapt" value=".025" class="chkbox" id="ckBox3">Date Format
+    <input type="checkbox" ng-model="none" name="adapt" value="0" class="chkbox" id="ckBox4" ng-init="checked=true">None
+</div>
+</div>
+
+<div class="formdivs" id="browser">
+<h2>1.3 - Browser Compatibility</h2>
+
+  <p>How is the website's browser compatibility?</p>
+  <div class="answers" ng-init="browser=.05">
+    <input type="radio" name="browser" ng-model="browser" value=".05">Great
+    <input type="radio" name="browser" ng-model="browser" value=".04">Good
+    <input type="radio" name="browser" ng-model="browser" value=".03">Needs Improvement      
+    <input type="radio" name="browser" ng-model="browser" value="0">Poor
+</div>
+
+  <p class="caption">If unsure, please check this tool to determine the website's broswer compatibility: <a href="http://browsershots.org/" class="wrapplink" target="_blank">Browser Compatibility Tool</a></p> 
+
+
+  <p class="abstract">
+  Browsershots makes screenshots of your web design in different operating systems and browsers. It is a free open-source online web application providing developers a convenient way to test their website's browser compatibility in one place. When you submit your web address, it will be added to the job queue. A number of distributed computers will open your website in their browser. Then they will make screenshots and upload them to our central dedicated server for your review.
+  </p>
+</div>
+
+<div class="formdivs" id="508">
+<h2>1.4 - 508 Compliance</h2>
+
+  <p>Does the website comply with all of the 508 Guidelines?</p>
+  <div class="answers" ng-init="five=.35">
+    <input type="radio" name="508" id="r1" ng-model="five" value=".35" required>Yes
+    <input type="radio" name="508" ng-model="five" value="0">No
+  </div>
+  <p class="caption">If unsure, please check this checklist to determine whether is does: <a href="https://pages.18f.gov/accessibility/checklist/" class="wrapplink" target="_blank">508 Guidelines</a></p>
+
+  <p class="abstract">
+  Section 508 details the accessibility standards for federal websites so that all users, regardless of disability status, can access technology. 
+  </p>
+</div>
+
+            
+         </div>
+         <div class="startova">
+        <a class="btn btn-success first" href="" onClick="window.location.reload()" data-ng-click="goNext(0)">Start over</a>
+         </div>
+         <img src="wrapplogo.png" alt="WRAPP Logo" class="wrapplogo">
+        <img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" class="boozlogo">
+       <div class="continue">
+       <a class="btn btn-default next" href="" data-ng-click="goNext(0)">Previous</a>
+       <a class="btn btn-default next" href="" data-ng-click="goNext(2)" onclick="Pilla1()">Continue</a>
+       </div>
+      </div>
+
+
+
+
+      <div class="tab-pane fade" id="step3">
+        <div class="well"> 
+        <h1 class="ptitle">Pillar 2 - Content</h1>
+        <br>
+
+<div class="formdivs" id="pages">
+<h2>2.1 - Pages</h2>
+
+  <p>Does the website have an "About Us" page?</p>
+  <div class="answers" ng-init="about=.0375">
+    <input type="radio" name="about" ng-model="about" value=".0375" required>Yes
+    <input type="radio" name="about" ng-model="about" value="0">No
+  </div>
+
+  <p>Does the website have a "FAQ" page?</p>
+  <div class="answers" ng-init="FAQ=.0375">
+    <input type="radio" name="FAQ" ng-model="FAQ" value=".0375" required>Yes
+    <input type="radio" name="FAQ" ng-model="FAQ" value="0">No
+  </div>
+
+  <p>Does the website have a "Contact" page?</p>
+  <div class="answers" ng-init="contact=.0375">
+    <input type="radio" name="contact" ng-model="contact" value=".0375" required>Yes
+    <input type="radio" name="contact" ng-model="contact" value="0">No
+  </div>
+        
+  <p>Does the website display a "404 Error" page?</p>
+  <div class="answers" ng-init="errorpage=.0375">
+    <input type="radio" name="404" ng-model="errorpage" id="2.17" value=".0375" required>Yes
+    <input type="radio" name="404" ng-model="errorpage" id="2.18" value="0">No
+  </div>
+</div>
+        
+
+<div class="formdivs" id="punctuationgrammar">
+<h2>2.2 - Punctuation & Grammar</h2>
+  
+  <p>Does the website have correct grammar and spelling?</p>
+  <div class="answers" ng-init="proofread=.1">
+    <input type="radio" name="proofread" ng-model="proofread" value=".1" id="2.21" required>Yes
+    <input type="radio" name="proofread" ng-model="proofread" id="2.22" value="0">No
+  </div>
+  <p class="caption">If unsure, please check this tool to check for spelling or grammar errors: <a href="https://www.grammarly.com/?AT3383=2"  class="wrapplink" target="_blank">Grammarly Tool</a></p>
+  <p class="abstract">
+  Grammarly is an online Chrome browser extension that improves communication by helping users find and correct grammar and spelling mistakes.
+  </p>
+
+</div>
+
+
+<div class="formdivs" id="authenticity">
+<h2>2.3 - Authenticity</h2>
+
+  <p>Does the website provide documentation for any source?</p>
+  <div class="answers" ng-init="citations=.05">
+    <input type="radio" name="citation" ng-model="citations" id="2.31" value=".05" required>Yes
+    <input type="radio" name="citation" ng-model="citations" id="2.32" value="0">No
+  </div>
+
+  <p>Is the content and information on the website accurate and current?</p>
+  <div class="answers" ng-init="uptodate=.05">
+    <input type="radio" name="uptodate" ng-model="uptodate" id="2.33" value=".05" required>Yes
+    <input type="radio" name="uptodate" ng-model="uptodate" id="2.34" value="0">No
+</div>
+
+  <p>Does the website provide informative news articles pertaining to the site?</p>
+  <div class="answers" ng-init="article=.05">
+    <input type="radio" name="article" ng-model="article" id="2.35" value=".05" required>Yes
+    <input type="radio" name="article" ng-model="article" id="2.36" value="0">No
+    <input type="radio" name="article" ng-model="article" id="2.35" value=".05">Not Applicable
+  </div>
+
+  <p>Is the website transparent?</p>
+  <div class="answers" ng-init="transparent=.05">
+    <input type="radio" name="transparent" ng-model="transparent" id="2.37" value=".05" required>Yes
+    <input type="radio" name="transparent" ng-model="transparent" id="2.38" value="0">No
+  </div>
+    <p class="caption">If unsure, please check this 10-point Government Transparency <a href="https://ballotpedia.org/Transparency_checklist" target="_blank">checklist</a></p> <br>
+
+  <p>Is the website's mission statement relevant and accurate for the website's intended goal?</p>
+  <div class="answers" ng-init="mission=.05">
+    <input type="radio" name="mission" ng-model="mission" id="2.39" value=".05" required checked>Yes
+    <input type="radio" name="mission" ng-model="mission" id="2.301" value="0">No
+  </div>
+
+</div>
+
+
+<div class="formdivs" id="userfriendliness">
+<h2>2.4 - User Friendliness</h2>
+
+  <p>Does the website have relevant hyperlinks, also known as "meaningful links", for users to click on?</p>
+  <div class="answers" ng-init="hyperlinks=.067">
+    <input type="radio" name="hyperlinks" ng-model="hyperlinks" id="2.41" value=".067" required>Yes
+    <input type="radio" name="hyperlinks" ng-model="hyperlinks" id="2.42" value="0">No
+  </div>
+
+  <p>Does the website break up large amounts of text with multimedia?</p>
+  <div class="answers" ng-init="breaktext=.067">
+    <input type="radio" name="breaktext" ng-model="breaktext" id="2.43" value=".067" required>Yes
+    <input type="radio" name="breaktext" ng-model="breaktext" id="2.44" value="0">No
+  </div>
+
+  <p>Is the end goal and purpose of the site clear to the user?</p>
+  <div class="answers" ng-init="endgoal=.066">
+    <input type="radio" name="endgoal" ng-model="endgoal" id="2.45" value=".066" required>Yes
+    <input type="radio" name="endgoal" ng-model="endgoal" id="2.46" value="0">No
+  </div>
+
+</div>
+
+
+<div class="formdivs" id="contentmanagement">
+<h2>2.5 - Effective Content Management System (CMS)</h2>
+
+  <p>Does the website use a content mangement system?</p>
+  <div class="answers" ng-init="CMS=.3">
+    <input type="radio" name="CMS" ng-model="CMS" id="2.51" value=".3" required>Yes
+    <input type="radio" name="CMS" ng-model="CMS" id="2.52" value="0">No
+  </div>
+        <br><br>
+        <label class="lbl">If yes, please enter the name of it: <input type="text" name="UserCMS" ng-model="CMSother" placeholder=" Your CMS"></label>
+
+</div>
+
+        </div>
+         <div class="startova">
+        <a class="btn btn-success first" href="" onClick="window.location.reload()" data-ng-click="goNext(0)">Start over</a>
+         </div>
+         <img src="wrapplogo.png" alt="WRAPP Logo" class="wrapplogo">
+        <img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" class="boozlogo">
+       <div class="continue">
+       <a class="btn btn-default next" href="" data-ng-click="goNext(1)">Previous</a>
+       <a class="btn btn-default next" href="" data-ng-click="goNext(3)" onclick="Pilla2()">Continue</a>
+       </div>
+      </div>
+
+
+
+      <div class="tab-pane fade" id="step4">
+        <div class="well">
+
+          <h1 class="ptitle">Pillar 3 - Navigation & Search</h1>
+
+
+<div class="formdivs" id="search">
+<h2>3.1 - Central or Global Search</h2>
+
+  <p>Does the website provide a search bar?</p>
+  <div class="answers" ng-init="search=.2">
+    <input type="radio" name="search" ng-model="search" id="3.11" value=".2" required>Yes
+    <input type="radio" name="search" ng-model="search" id="3.12" value="0">No
+  </div>
+
+  <p>If so, is the search bar visible and accessible on every page?</p>
+  <div class="answers" ng-init="searchbar=.2">
+    <input type="radio" name="searchbar" ng-model="searchbar" id="3.13" value=".2" required>Yes
+    <input type="radio" name="searchbar" ng-model="searchbar" id="3.14" value="0">No
+  </div>
+</div>
+
+
+<div class="formdivs" id="userpath">
+<h2>3.2 - Logical User Path</h2>
+
+  <p>Does the website have a logical user path (does it generally take less than 7 clicks for the user to achieve their intended use goal of the site)?</p>
+  <div class="answers" ng-init="logical=.4">
+    <input type="radio" name="logical" ng-model="logical" id="3.21" value=".4" required>Yes
+    <input type="radio" name="logical" ng-model="logical" id="3.22" value="0">No
+  </div>
+</div>
+
+
+<div class="formdivs" id="usefullinks">
+<h2>3.3 - Useful Links/Top Searches</h2>
+
+  <p>Does the website recommended additional links to the user if they cannot find their intended search?</p>
+  <div class="answers" ng-init="recommended=.05">
+    <input type="radio" name="recommended" ng-model="recommended" id="3.31" value=".05" required>Yes
+    <input type="radio" name="recommended" ng-model="recommended" id="3.32" value="0">No
+  </div>
+    <p>Does the website show "top searches" for easy user access to frequently searched informaton?</p>
+    <div class="answers" ng-init="topsearch=.05">
+    <input type="radio" name="topsearch" ng-model="topsearch" id="3.33" value=".05" required>Yes
+    <input type="radio" name="topsearch" ng-model="topsearch" id="3.34" value="0">No
+    </div>
+</div>
+
+
+<div class="formdivs" id="logohome">
+<h2>3.4 - Website Logo Home Link</h2>
+
+  <p>Does the website provide a clear website logo that links to the home page on every page of the website?</p>
+  <div class="answers" ng-init="homelogo=.1">
+    <input type="radio" name="homelogo" ng-model="homelogo" id="3.41" value=".1" required>Yes
+    <input type="radio" name="homelogo" ng-model="homelogo" id="3.42" value="0">No
+</div>
+</div>
+
+
+        </div>
+         <div class="startova">
+        <a class="btn btn-success first" href="" onClick="window.location.reload()" data-ng-click="goNext(0)">Start over</a>
+         </div>
+         <img src="wrapplogo.png" alt="WRAPP Logo" class="wrapplogo">
+        <img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" class="boozlogo">
+       <div class="continue">
+       <a class="btn btn-default next" href="" data-ng-click="goNext(2)">Previous</a>
+       <a class="btn btn-default next" href="" data-ng-click="goNext(4)" onclick="Pilla3()">Continue</a>
+       </div>
+      </div>
+
+       <div class="tab-pane fade" id="step5">
+        <div class="well"> 
+        <h1 class="ptitle">Pillar 4 - Personalization</h1>
+    
+
+<div class="formdivs" id="geolocation">
+<h2>4.1 - Geolocation</h2>
+
+  <p>Does the website customize ads and suggest a path based on the user's location?</p>
+  <div class="answers" ng-init="locationpath=.1">
+    <input type="radio" name="locationpath" ng-model="locationpath" id="4.11" value=".1" required>Yes
+    <input type="radio" name="locationpath" ng-model="locationpath" id="4.12" value="0">No
+</div>
+
+  <p>Does the website tailor information displayed based on user location?</p>
+  <div class="answers" ng-init="locationinfo=.1">
+    <input type="radio" name="locationinfo" ng-model="locationinfo" id="4.13" value=".1" required>Yes
+    <input type="radio" name="locationinfo" ng-model="locationinfo" id="4.14" value="0">No
+</div>
+</div>
+
+<div class="formdivs" id="account">
+<h2>4.2 - Account/User Profile</h2>
+
+  <p>Does the website have a profile that retains a user's personal information (e.g. e-mail, name, etc.)?</p>
+  <div class="answers" ng-init="account=.05">
+    <input type="radio" name="account" ng-model="account" id="4.21" value=".05" required>Yes
+    <input type="radio" name="account" ng-model="account" id="4.22" value="0">No
+    <input type="radio" name="account" ng-model="account" id="4.21" value=".05">Not Applicable
+</div>
+
+  <p>If so, does it use security protocols for authentication and authorization?</p>
+  <div class="answers" ng-init="authentication=.05">
+    <input type="radio" name="authentication" ng-model="authentication" value=".05" id="4.23" required>Yes
+    <input type="radio" name="authentication" ng-model="authentication" id="4.24" value="0">No
+    <input type="radio" name="authentication" ng-model="authentication" id="4.23" value=".05">Not Applicable
+</div>
+</div>
+
+<div class="formdivs" id="cookies">
+<h2>4.3 - Cookie Use/Active Recommendation</h2>
+
+  <p>Does the website use any type of cookies?</p>
+  <div class="answers" ng-init="cookies=.15">
+    <input type="radio" name="cookies" ng-model="cookies" id="4.31" value=".15" required>Yes
+    <input type="radio" name="cookies" ng-model="cookies" id="4.32" value="0">No
+  </div>
+
+    <p>If so, are the cookies used to generate active recommendations? Does the website recommend next steps, links, or products based on cookies stored?</p>
+    <div class="answers" ng-init="cookierecommend=.15">
+    <input type="radio" name="cookierecommend" ng-model="cookierecommend" id="4.33" value=".15" required>Yes
+    <input type="radio" name="cookierecommend" ng-model="cookierecommend" id="4.34" value="0">No
+    <input type="radio" name="cookierecommend" ng-model="cookierecommend" id="4
+    33" value=".15">Not Applicable
+</div>
+</div>
+
+<div class="formdivs" id="autofill">
+<h2>4.4 - Autofill</h2>
+
+  <p>Does the website use type head or another type of autofill/predictive analytic?</p>
+  <div class="answers" ng-init="autofill=.2">
+    <input type="radio" name="autofill" ng-model="autofill" id="4.41" value=".2" required>Yes
+    <input type="radio" name="autofill" ng-model="autofill" id="4.42" value="0">No
+</div>
+</div>
+
+<div class="formdivs" id="trackingprogress">
+<h2>4.5 - Tracking Progress/Abandonment</h2>
+
+  <p>Does the website have a tool that shows the user progress while on the form?</p>
+  <div class="answers" ng-init="progress=.1">
+    <input type="radio" name="progress" ng-model="progress" id="4.51" value=".1" required>Yes
+    <input type="radio" name="progress" ng-model="progress" id="4.52" value="0">No
+    <input type="radio" name="progress" ng-model="progress" id="4.51" value=".1">Not Applicable
+</div>
+
+  <p>Does the website provide live tracking capabilities?</p>
+  <div class="answers" ng-init="livetracking=.1">
+    <input type="radio" name="livetracking" ng-model="livetracking" id="4.53" value=".1" required>Yes
+    <input type="radio" name="livetracking" ng-model="livetracking" id="4.54" value="0">No
+    <input type="radio" name="livetracking" ng-model="livetracking" id="4.53" value=".1">Not Applicable
+</div>
+</div>
+
+        </div>
+         <div class="startova">
+        <a class="btn btn-success first" href="" onClick="window.location.reload()" data-ng-click="goNext(0)">Start over</a>
+         </div>
+         <img src="wrapplogo.png" alt="WRAPP Logo" class="wrapplogo">
+        <img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" class="boozlogo">
+       <div class="continue">
+       <a class="btn btn-default next" href="" data-ng-click="goNext(3)">Previous</a>
+       <a class="btn btn-default next" href="" data-ng-click="goNext(5)" onclick="Pilla4()">Continue</a>
+       </div>
+      </div>
+
+
+
+
+      <div class="tab-pane fade" id="step6">
+        <div class="well"> 
+
+        <h1 class="ptitle">Pillar 5 - Site Performance</h1>
+ 
+
+
+
+
+<div class="formdivs" id="sitespeed">
+<h2>5.1 - Speed of the Site</h2>
+
+  <p>Is CSS and JavaScript minified?</p>
+  <div class="answers" ng-init="CSS=.067">
+    <input type="radio" name="CSS" ng-model="CSS" value=".067" id="5.11" required>Yes
+    <input type="radio" name="CSS" ng-model="CSS" value="0" id="5.12">No
+</div>
+
+  <p>Are the files reduced to smaller sizes?</p>
+  <div class="answers" ng-init="reduced=.067">
+    <input type="radio" name="reduced" ng-model="reduced" value=".067" id="5.13" required>Yes
+    <input type="radio" name="reduced" ng-model="reduced" value="0" id="5.14">No
+</div>
+
+   <p>Does the website receive a score of 65 or higher in the "Mobile Speed" & "Desktop Speed" categories on Google's <a href="https://testmysite.thinkwithgoogle.com/" target="_blank">PageSpeed Insights tool</a>?<br>
+  <span class="readit">When inserting the URL of the website on PageSpeed Insights, make sure to include the http or https. (e.g. http://www.benefits.gov)</span></breaktext>
+  <div class="answers" ng-init="reasonable=.066">
+    <input type="radio" name="reasonablespeed" ng-model="reasonable" value=".066" id="5.15" required>Yes
+    <input type="radio" name="reasonablespeed" ng-model="reasonable" value="0" id="5.16">No
+  </div> 
+    <p class="caption">Pagespeed Insights is a tool that measures the performance of both your desktop and mobile site in terms of speed.</p>
+
+</div>
+
+<div class="formdivs" id="loadtime">
+<h2>5.2 - Load Time of Media</h2>
+
+  <p>Is there lag for mutltimedia load?</p>
+  <div class="answers" ng-init="loadtime=.2"> 
+    <input type="radio" name="loadtime" ng-model="loadtime" value="0" id="5.21" required>Yes
+    <input type="radio" name="loadtime" ng-model="loadtime" value=".2" id="5.22">No
+</div>
+</div>
+
+<div class="formdivs" id="datacollection">
+<h2>5.3 - Data Collection</h2>
+
+  <p>Does the website collect and store data/analytics?</p>
+  <div class="answers" ng-init="collectdata=.175">
+    <input type="radio" name="collectdata" ng-model="collectdata" value=".175" id="5.31" required>Yes
+    <input type="radio" name="collectdata" ng-model="collectdata" value="0" id="5.32">No
+</div>
+
+  <p>Is the stored data easily accessible and updated frequently?</p>
+  <div class="answers" ng-init="accessdata=.175">
+    <input type="radio" name="accessdata" ng-model="accessdata" value=".175" id="5.33" required>Yes
+    <input type="radio" name="accessdata" ng-model="accessdata" value="0" id="5.34">No
+</div>
+</div>
+
+<div class="formdivs" id="brokenlinks">
+<h2>5.4 - Broken Links</h2>
+
+  <p>Does the website have active and functioning links?</p>
+  <div class="answers" ng-init="activelinks=.15">
+    <input type="radio" name="activelinks" ng-model="activelinks" value=".15" id="5.41" required>Yes
+    <input type="radio" name="activelinks" ng-model="activelinks" value="0" id="5.42">No
+  </div>
+    <p class="caption">If unsure, please use the following <a href="https://chrome.google.com/webstore/detail/check-my-links/ojkcdipcgfaekbeaelaapakgnjflfglf?hl=en-GB" class="wrapplink" target="_blank">"Check My Links"</a> tool.</p>
+    <p class="abstract">The "Check My Links" tool is a link checker that crawls through your webpage and looks for broken links.</p>
+
+</div>
+
+<div class="formdivs" id="SEO">
+<h2>5.5 - Search Engine Optimization (SEO)</h2>
+<p class="caption">SEO is a marketing discipline focused on growing visibility in organic (non-paid) search engine results. SEO encompasses both the technical and creative elements required to improve rankings, drive traffic, and increase awareness in search engines. There are many aspects to SEO, from the words on your page to the way other sites link to you on the web. Sometimes SEO is simply a matter of making sure your site is structured in a way that search engines understand.
+SEO isn't just about building search engine-friendly websites. It's about making your site better for people too. <br>
+Definition from <a href="https://moz.com/beginners-guide-to-seo" target="_blank">https://moz.com/beginners-guide-to-seo</a></p>
+
+  <p>Does the website include key words that allow the user to find the site easily? (2-4 keyword search terms)</p>
+  <div class="answers" ng-init="seo=.1">
+    <input type="radio" name="seo" ng-model="seo" value=".1" id="5.51" required>Yes
+    <input type="radio" name="seo" ng-model="seo" value="0" id="5.52">No
+  </div>
+        <p class="caption">If desired, please use any of <a href="https://moz.com/tools" target="_blank">these tools</a> offered by Moz.com to better understand and improve upon the website's SEO.</p>
+
+</div>
+
+        </div>
+         <div class="startova">
+        <a class="btn btn-success first" href="" onClick="window.location.reload()" data-ng-click="goNext(0)">Start over</a>
+         </div>
+         <img src="wrapplogo.png" alt="WRAPP Logo" class="wrapplogo">
+        <img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" class="boozlogo">
+       <div class="continue">
+       <a class="btn btn-default next" href="" data-ng-click="goNext(4)">Previous</a>
+       <a class="btn btn-default next" href="" data-ng-click="goNext(6)" onclick="Pilla5()">Continue</a>
+       </div>
+      </div>
+
+
+
+
+       <div class="tab-pane fade" id="step7">
+        <div class="well">
+          <h1 class="ptitle">Pillar 6 - Social Interaction</h1>
+   
+
+
+<div class="formdivs" id="Feedback">
+<h2>6.1 - Feedback Option</h2>
+
+  <p>Does the website have a feedback section so that the user can give comments or suggestions about the website?</p>
+  <div class="answers" ng-init="feedback=.25">
+    <input type="radio" name="feedback" ng-model="feedback" value=".25" id="6.11" required>Yes
+    <input type="radio" name="feedback" ng-model="feedback" value="0" id="6.12">No
+</div>
+</div>
+
+<div class="formdivs" id="listserve">
+<h2>6.2 - Subscribe/List Serve</h2>
+
+  <p>Does the website have a subscription or list serve to reach its audience?</p>
+  <div class="answers" ng-init="listserve=.1">
+    <input type="radio" name="listserve" ng-model="listserve" value=".1" id="6.21" required>Yes
+    <input type="radio" name="listserve" ng-model="listserve" value="0" id="6.22">No
+</div>
+</div>
+
+<div class="formdivs" id="socialmedia">
+<h2>6.3 - Social Media Presence/Links</h2>
+
+  <p>Does the website have social media presence on a variety of suitable platforms (Facebook, Instagram, Twitter etc.)?</p>
+  <div class="answers" ng-init="socialmedia=.05">
+    <input type="radio" name="socialmedia" ng-model="socialmedia" value=".05" id="6.31" required>Yes
+    <input type="radio" name="socialmedia" ng-model="socialmedia" value="0" id="6.32">No
+</div>
+
+  <p>Are there visible links to the site's social media accounts?</p>
+  <div class="answers" ng-init="sociallink=.05">
+    <input type="radio" name="social" ng-model="sociallink" value=".05" id="6.33" required>Yes
+    <input type="radio" name="social" ng-model="sociallink" value="0" id="6.34">No
+</div>
+</div>
+
+<div class="formdivs" id="confirmation">
+<h2>6.4 - Confirmation/Notifications</h2>
+
+  <p>Does the website provide a confirmation page at the end of a form that alerts the user that their information was completed and/or received?</p>
+  <div class="answers" ng-init="confirm=.25">
+    <input type="radio" name="confirm" ng-model="confirm" value=".25" id="6.41" required>Yes
+    <input type="radio" name="confirm" ng-model="confirm" value="0" id="6.42">No
+    <input type="radio" name="confirm" ng-model="confirm" value=".25" id="6.43">Not Applicable 
+  </div>
+</div>
+
+<div class="formdivs" id="livechat">
+<h2>6.5 - Live Chat</h2>
+
+<p>Is there a help button or live chat feature that lets users interact with someone for any questions or concerns?</p>
+<div class="answers" ng-init="livechat=.2">
+    <input type="radio" name="livechat" ng-model="livechat" value=".2" id="6.51" required>Yes
+    <input type="radio" name="livechat" ng-model="livechat" value="0" id="6.52">No
+</div>
+</div>
+
+
+<div class="formdivs" id="forums">
+<h2>6.6 - Forums</h2>
+
+<p>Are there community boards or instant chat features for user-based interaction?</p>
+  <div class="answers" ng-init="forums=.1">
+    <input type="radio" name="forums" ng-model="forums" value=".1" id="6.61" required>Yes
+    <input type="radio" name="forums" ng-model="forums" value="0" id="6.62">No
+    <input type="radio" name="forums" ng-model="forums" value=".1" id="6.61">Not Applicable 
+</div>
+</div>
+
+
+        </div>
+         <div class="startova">
+        <a class="btn btn-success first" href="" onClick="window.location.reload()" data-ng-click="goNext(0)">Start over</a>
+         </div>
+         <img src="wrapplogo.png" alt="WRAPP Logo" class="wrapplogo">
+        <img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" class="boozlogo">
+       <div class="continue">
+       <a class="btn btn-default next" href="" data-ng-click="goNext(5)">Previous</a>
+       <a class="btn btn-default next" href="" data-ng-click="goNext(7)" onclick="Pilla6()">Continue</a>
+       </div>
+      </div>
+
+
+
+
+      <div class="tab-pane fade" id="step8">
+        <div class="well">
+          <h1 class="ptitle">Pillar 7 - Security & Privacy</h1>
+  
+
+
+
+<div class="formdivs" id="governmentregulations">
+<h2>7.1 - Government Regulations</h2>
+
+  <p>Does the website comply with federal privacy/security regulations both domestically and internationally?</p>
+  <p>NIST 800-53 (Appendix J)?</p>
+  <div class="answers" ng-init="fedprivacy=.05">
+    <input type="radio" name="800-53" ng-model="fedprivacy" value=".05" id="7.11" required>Yes
+    <input type="radio" name="800-53" ng-model="fedprivacy" value="0" id="7.12">No
+  </div>
+    <p class="caption">If unsure, please refer to <a href="http://www.hhs.gov/web/section-508/making-files-accessible/checklist/pdf/index.html " class="wrapplink" target="_blank">NIST 800-53 checklist</a></p>
+  <p class="abstract">NIST 800-53 (Appendix J), "Security and Privacy Controls for Federal Information Systems and Organizations," provides a catalog of security controls for all U.S. federal information systems except those related to national security.
+  </p>
+        
+    <p>NIST 800-122?</p>
+  <div class="answers" ng-init="fedISO=.05">
+    <input type="radio" name="800-122" ng-model="fedISO" value=".05" id="7.13" required>Yes
+    <input type="radio" name="800-122" ng-model="fedISO" value="0" id="7.14">No
+  </div>
+    <p class="caption">If unsure, please refer to <a href="http://nvlpubs.nist.gov/nistpubs/Legacy/SP/nistspecialpublication800-122.pdf" class="wrapplink" target="_blank">NIST 800-122 guidelines</a></p>
+<p class="abstract">
+NIST 800-122, "Guide to Protecting the Confidentiality of Personally Identifiable Information," provides agencies with guidelines for a risk-based approach to protecting the confidentiality of personally identifiable information (PII). </p>
+
+
+  <p>Privacy Act of 1974?</p>
+  <div class="answers" ng-init="privacyact=.05">
+    <input type="radio" name="privacyact" ng-model="privacyact" value=".05" id="7.15" required>Yes
+    <input type="radio" name="privacyact" ng-model="privacyact" value="0" id="7.16">No
+  </div>
+    <p class="caption">If unsure, please refer to <a href="https://www.gpo.gov/fdsys/pkg/USCODE-2012-title5/pdf/USCODE-2012-title5-partI-chap5-subchapII-sec552a.pdf" class="wrapplink" target="_blank"> Privacy Act of 1974</a></p>
+<p class="abstract">
+The Privacy Act of 1974 establishes a code of fair information practices that governs the collection, maintenance, use, and dissemination of information about individuals that is maintained in systems of records by federal agencies.</p>
+
+
+  <p>Paperwork Reduction Act (1995)?</p>
+  <div class="answers" ng-init="paperwork=.05">
+    <input type="radio" name="paperwork" ng-model="paperwork" value=".05" id="7.17" required>Yes
+    <input type="radio" name="paperwork" ng-model="paperwork" value="0" id="7.18">No
+  </div>
+    <p class="caption">If unsure, please refer to <a href="http://www.hhs.gov/ocio/policy/collection/" class="wrapplink" target="_blank"> Paperwork Reduction Act</a></p>
+<p  class="abstract">
+The Paperwork Reduction Act (1995) requires that agencies obtain Office of Management and Budget (OMB) approval before requesting most types of information from the public.
+</p>
+
+  <p>E-Government Act of 2002?</p>
+  <div class="answers" ng-init="egovernment=.05">
+    <input type="radio" name="egovernment" ng-model="egovernment" value=".05" id="7.19" required>Yes
+    <input type="radio" name="egovernment" ng-model="egovernment" value="0" id="7.191">No
+  </div>
+    <p class="caption">If unsure, please refer to <a href="https://www.gpo.gov/fdsys/pkg/STATUTE-116/pdf/STATUTE-116-Pg2899.pdf" class="wrapplink" target="_blank">E-Government Act of 2002</a></p>
+<p  class="abstract">
+The E-Government Act of 2002 is a statute whose purpose is to improve the management and promotion of electronic government services and processes by establishing a framework of measures that require using Internet-based information technology to improve citizen access to government information and services.
+</p>
+ 
+  <p>Office of Management & Budget (OMB)?</p>
+  <div class="answers" ng-init="OMB=.05">
+    <input type="radio" name="OMB" ng-model="OMB" value=".05" id="7.192" required>Yes
+    <input type="radio" name="OMB" ng-model="OMB" value="0" id="7.193">No
+  </div>
+    <p class="caption">If unsure, please refer to <a href="https://www.whitehouse.gov/omb/privacy_general" class="wrapplink" target="_blank">OMB</a></p>
+
+<p class="abstract">
+ The OMB details multiple guidelines regarding privacy and inter-agency sharing of personal data.
+</p>
+
+  <p>Children's Online Privacy Protection Act (COPPA)?</p>
+  <div class="answers" ng-init="COPPA=.05">
+    <input type="radio" name="COPPA" ng-model="COPPA" value=".05" id="7.194" required>Yes
+    <input type="radio" name="COPPA" ng-model="COPPA" value="0" id="7.195">No
+  </div>
+    <p class="caption">If unsure, please refer to <a href="https://www.ftc.gov/enforcement/rules/rulemaking-regulatory-reform-proceedings/childrens-online-privacy-protection-rule" class="wrapplink" target="_blank">COPPA</a></p>
+
+<p class="abstract">
+COPPA is a law created to protect the privacy of children under 13.
+</p>
+
+</div>
+
+<div class="formdivs" id="securityteam">
+<h2>7.2 - Security Team</h2>
+
+  <p>Is there staff to update protocols and scan for vulnerabilities?</p>
+  <div class="answers" ng-init="security=.03">
+    <input type="radio" name="security" ng-model="security" value=".03" id="7.21" required>Yes
+    <input type="radio" name="security" ng-model="security" value="0" id="7.22">No
+  </div>
+
+    <p>Does the staff frequently check for threats and update the system?</p>
+  <div class="answers" ng-init="checkthreats=.03">
+    <input type="radio" name="checkthreat" ng-model="checkthreats" value=".03" id="7.23" required>Yes
+    <input type="radio" name="checkthreat" ng-model="checkthreats" value="0" id="7.24">No
+  </div>
+
+  <p>Does the staff establish risk tests and protocols to mitigate risk?</p>
+  <div class="answers" ng-init="risktest=.03">
+    <input type="radio" name="risktest" ng-model="risktest" value=".03" id="7.25" required>Yes
+    <input type="radio" name="risktest" ng-model="risktest" value="0" id="7.26">No
+  </div>
+
+  <p>Does the staff analyze the privacy practices of the website and if the user information is appropriately secure?</p>
+  <div class="answers" ng-init="infosecure=.03">
+    <input type="radio" name="infosecure" ng-model="infosecure" value=".03" id="7.27" required>Yes
+    <input type="radio" name="infosecure" ng-model="infosecure" value="0" id="7.28">No
+  </div>
+
+  <p>Does the staff review preventative security protocols to stop Distributed Denial of Service (DDOS)?</p>
+  <div class="answers" ng-init="DDOS=.03">
+    <input type="radio" name="DDOS" ng-model="DDOS" value=".03" id="7.29" required>Yes
+    <input type="radio" name="DDOS" ng-model="DDOS" value="0" id="7.291">No
+  </div>
+</div>
+
+<div class="formdivs" id="authorization">
+<h2>7.3 - Authorization & Authentication</h2>
+
+  <p>Does the website have an appropriate framework in place for authorization and authentication if it collects Personal Identifiable Information (PII)?</p>
+  <div class="answers" ng-init="PII=.1">
+    <input type="radio" name="PII" ng-model="PII" value=".1" id="7.31" required>Yes
+    <input type="radio" name="PII" ng-model="PII" value="0" id="7.32">No
+    <input type="radio" name="PII" ng-model="PII" value=".1" id="7.31">Not Applicable
+  </div>
+  <p class="abstract">For a definition of what is considered Personal Identifiable Information, please reference the <a href="http://csrc.nist.gov/publications/nistpubs/800-122/sp800-122.pdf" target="_blank">NIST 800-122 guidelines</a></p>
+
+  <p>Is the website continually maintaining user PII and allowing user choice (option to unsubscribe)?</p>
+  <div class="answers" ng-init="unsubscribe=.1">
+    <input type="radio" name="unsubscribe" ng-model="unsubscribe" value=".1" id="7.33" required>Yes
+    <input type="radio" name="unsubscribe" ng-model="unsubscribe" value="0" id="7.34">No
+    <input type="radio" name="unsubscribe" ng-model="unsubscribe" value=".1" id="7.33">Not Applicable
+</div>
+</div>
+
+<div class="formdivs" id="securedata">
+<h2>7.4 - Secure Data/Information</h2>
+
+  <p> Are the users automatically opted in to data collection, or can they opt out upfront?</p>
+  <div class="answers" ng-init="optout=.1">
+    <input type="radio" name="optout" ng-model="optout" value=".1" id="7.41" required>Opt Out Offered
+    <input type="radio" name="optout" ng-model="optout" value="0" id="7.42">Opt Out Not Offered
+  </div>
+
+  <p>Does your website connect with a secure socket layer for HTTPS?</p>
+  <div class="answers" ng-init="HTTPS=.1">
+    <input type="radio" name="HTTPS" ng-model="HTTPS" value=".1" id="7.43" required>Yes
+    <input type="radio" name="HTTPS" ng-model="HTTPS" value="0" id="7.44">No
+  </div>
+
+  <p>If used internationally,does the website comply with international guidelines?</p>
+  <div class="answers" ng-init="international=.1">
+    <input type="radio" name="international" ng-model="international" value=".1" id="7.45" required>Yes
+    <input type="radio" name="international" ng-model="international" value="0" id="7.46">No
+    <input type="radio" name="international" ng-model="international" value=".1" id="7.45">Not Applicable
+  </div>
+  <ul class="abstract">Please refer to the following for common examples:
+       <li><a href="http://www.lexology.com/library/detail.aspx?g=1d6e5a73-614b-4d70-9451-5166bfb47384" target="_blank">Asia Pacific (APAC)</a></li>
+      <li><a href="http://www.ema.europa.eu/docs/en_GB/document_library/Other/2010/01/WC500070046.pdf" target="_blank">Europe (EMEA) Regulations</a></li>
+      <li><a href="http://cloudtimes.org/2012/11/21/data-protection-privacy-issues-latin-america/" target="_blank">Americas</a></li>
+  </ul>
+</div>
+
+        </div>
+         <div class="startova">
+        <a class="btn btn-success first" href="" onClick="window.location.reload()" data-ng-click="goNext(0)">Start over</a>
+         </div>
+         <img src="wrapplogo.png" alt="WRAPP Logo" class="wrapplogo">
+        <img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" class="boozlogo">
+       <div class="continue">
+       <a class="btn btn-default next" href="" data-ng-click="goNext(6)">Previous</a>
+       <a class="btn btn-default next" href="" data-ng-click="goNext(8)" onclick="Pilla7()">Continue</a>
+       </div>
+      </div>
+
+
+       <div class="tab-pane fade" id="step9">
+        <div class="well">
+          <h1 class="ptitle">Pillar 8 - Aesthetics</h1>
+     
+
+
+<div class="formdivs" id="designteam">
+<h2>8.1 - Internal Design Staff</h2>
+
+  <p>Is there staff monitoring & maintaining current design trends?</p>
+  <div class="answers" ng-init="team=.1">
+    <input type="radio" name="team" ng-model="team" value=".1" id="8.11" required>Yes
+    <input type="radio" name="team" ng-model="team" value="0" id="8.12">No
+  </div>
+
+  <p>Does the staff use web analytics/feedback to continuously improve the site?</p>
+  <div class="answers" ng-init="webdata=.1">
+    <input type="radio" name="webdata" ng-model="webdata" value=".1" id="8.13" required>Yes
+    <input type="radio" name="webdata" ng-model="webdata" value="0" id="8.14">No
+  </div>
+</div>
+
+<div class="formdivs" id="orglayout">
+<h2>8.2 - Organizational Layout</h2>
+
+  <p>Is the main call to action (e.g. "Get Started" button) presented immediately?</p>
+  <div class="answers" ng-init="action=.0417">
+    <input type="radio" name="action" ng-model="action" value=".0417" id="8.21" required>Yes
+    <input type="radio" name="action" ng-model="action" value="0" id="8.22">No
+  </div>
+
+    <p>Is the menu bar and contact information visible on every page?</p>
+  <div class="answers" ng-init="visible=.0417">
+    <input type="radio" name="visible" ng-model="visible" value=".0417" id="8.23" required>Yes
+    <input type="radio" name="visible" ng-model="visible" value="0" id="8.24">No
+  </div>
+
+    <p>Do the subsequent pages on the website follow a consistent design?</p>
+  <div class="answers" ng-init="condesign=.0417">
+    <input type="radio" name="condesign" ng-model="condesign" value=".0417" id="8.25" required>Yes
+    <input type="radio" name="condesign" ng-model="condesign" value="0" id="8.26">No
+  </div>
+
+    <p>Are the buttons a consistent color, style, shape or texture?</p>
+  <div class="answers" ng-init="concolor=.0417">
+    <input type="radio" name="concolor" ng-model="concolor" value=".0417" id="8.27" required>Yes
+    <input type="radio" name="concolor" ng-model="concolor" value="0" id="8.28">No
+  </div>
+
+    <p>Does the website implement a flat, minimalist design?</p>
+  <div class="answers" ng-init="typedesign=.0416">
+    <input type="radio" name="typedesign" ng-model="typedesign" value=".0416" id="8.29" required>Yes
+    <input type="radio" name="typedesign" ng-model="typedesign" value="0" id="8.291">No
+  </div>
+
+    <p>Does the website implement a hamburger menu that provides intuitive user navigation?</p>
+  <div class="answers" ng-init="hamburger=.0416">
+    <input type="radio" name="hamburger" ng-model="hamburger" value=".0416" id="8.292" required>Yes
+    <input type="radio" name="hamburger" ng-model="hamburger" value="0" id="8.293">No
+  </div>
+
+</div>
+
+<div class="formdivs" id="colorfont">
+<h2>8.3 - Color & Font</h2>
+
+  <p>Do the pages have consistent and simple typography?</p>
+  <div class="answers" ng-init="contypo=.05">
+    <input type="radio" name="contypo" ng-model="contypo" value=".05" id="8.31" required>Yes
+    <input type="radio" name="contypo" ng-model="contypo" value="0" id="8.32" required>No
+  </div>
+
+    <p>Is the font size and color suitable to the targeted user base?</p>
+  <div class="answers" ng-init="targetfont=.05">
+    <input type="radio" name="targetfont" ng-model="targetfont" value=".05" id="8.33" required>Yes
+    <input type="radio" name="targetfont" ng-model="targetfont" value="0" id="8.34">No
+  </div>
+
+    <p>Are the colors and text used on the website in compliance with the WCAG AA 2.0 guidelines?</p>
+  <div class="answers" ng-init="WCAG=.05">
+    <input type="radio" name="WCAG" ng-model="WCAG" value=".05" id="8.35" required>Yes
+    <input type="radio" name="WCAG" ng-model="WCAG" value="0" id="8.36">No
+  </div>
+  <p class="abstract">If unsure, please reference the guidelines <a href="https://www.w3.org/WAI/WCAG20/quickref/#visual-audio-contrast-scale" target="_blank">here</a>.</p>
+        
+    <p>Does the website display large headings and options for "Further Reading" or "Read More" for large amounts of text?</p>
+  <div class="answers" ng-init="readmore=.05">
+    <input type="radio" name="readmore" ng-model="readmore" value=".05" id="8.37" required>Yes
+    <input type="radio" name="readmore" ng-model="readmore" value="0" id="8.38">No
+</div>
+</div>
+
+<div class="formdivs" id="websitemedia">
+<h2>8.4 - Website Multimedia</h2>
+
+  <p>Does the website display custom, HD images as opposed to stock images?</p>
+  <div class="answers" ng-init="customimages=.067">
+    <input type="radio" name="customimages" ng-model="customimages" value=".067" id="8.41" required>Yes
+    <input type="radio" name="customimages" ng-model="customimages" value="0" id="8.42">No
+  </div>
+
+  <p>Does the website have a loading page animation?</p>
+  <div class="answers" ng-init="loading=.067">
+    <input type="radio" name="loading" ng-model="loading" value=".067" id="8.43" required>Yes
+    <input type="radio" name="loading" ng-model="loading" value="0" id="8.44">No
+  </div>
+
+  <p>Does the website use hover animation?</p>
+  <div class="answers" ng-init="hover=.066">
+    <input type="radio" name="hover" ng-model="hover" value=".066" id="8.45" required>Yes
+    <input type="radio" name="hover" ng-model="hover" value="0" id="8.46">No
+  </div>
+
+<div class="formdivs" id="parallaxscrolling">
+<h2>8.5 - Parallax Scrolling</h2>
+
+  <p>Does the website employ parallax scrolling?</p>
+  <div class="answers" ng-init="parallax=.15">
+    <input type="radio" name="parallax" ng-model="parallax" value=".15" id="8.51" required>Yes
+    <input type="radio" name="parallax" ng-model="parallax" value="0" id="8.52">No
+</div>
+</div>
+</div>
+
+        </div>
+
+          <div class="startova">
+        <a class="btn btn-success first" href="" onClick="window.location.reload()" data-ng-click="goNext(0)">Start over</a>
+         </div>
+         <img src="wrapplogo.png" alt="WRAPP Logo" class="wrapplogo">
+        <img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" class="boozlogo">
+       <div class="continue">
+        <a class="btn btn-default next" href="" data-ng-click="goNext(7)">Previous</a>
+       <a class="btn btn-primary" id="submittin" type="submit" href="" data-ng-click="goNext(9)" onclick="Pilla8()">Submit</a>
+       </div>
+      </div>
+
+
+
+<div class="tab-pane fade" id="step10">
+<div class="well"> 
+<div id="report">
+<section class="the-report"> <!--for demo wrap-->
+
+
+          <h1 class="heads"><span id="Atitle"></span> Score Card Results:</h1>  
+<table cellpadding="0" cellspacing="0" border="0">
+  <thead>
+    <tr>
+      <td colspan="3" id="overall">Overall Score:</td>
+      <td id="score">Not Completed!</td>
+      </tr>
+    <tr>
+      <th>Pillar</th>
+      <th>Sub-Pillar</th>
+      <th>% Weight</th>
+      <th>Scores</th>
+    </tr>
+    <tr>
+    <div class="pdiv">
+      <td rowspan="4" class="pillar">P1. Accessibility</td>
+      <td>1.1 Responsiveness</td>
+      <td>50%</td>
+      <td rowspan="4" class="score" id="p1">Not Completed!</td>
+    </tr>
+    <tr>
+      <td>1.2 Multinational</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>1.3 Browser Compatibility</td>
+      <td>5%</td>
+    </tr>
+    <tr>
+      <td>1.4 508 Compliance</td>
+      <td>35%</td>
+    </tr>
+    <tr>
+    <td rowspan="5" class="pillar">P2. Content</td>
+      <td>2.1 Pages</td>
+      <td>15%</td>
+      <td rowspan="5" class="score" id="p2">Not Completed!</td>
+    </tr>
+    <tr>
+      <td>2.2 Punctuation & Grammar</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>2.3 Authenticity</td>
+      <td>25%</td>
+    </tr>
+    <tr>
+      <td>2.4 User Friendliness</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>2.5 Effective Content Management System (CMS)</td>
+      <td>30%</td>
+    </tr>
+    <tr>
+    <td rowspan="4" class="pillar">P3. Navigation & Search</td>
+      <td>3.1 Central or Global Search</td>
+      <td>40%</td>
+      <td rowspan="4" class="score" id="p3">Not Completed!</td>
+    </tr>
+    <tr>
+      <td>3.2 Logical User Path</td>
+      <td>40%</td>
+    </tr>
+    <tr>
+      <td>3.3 Useful Links/Top Searches</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>3.4 Website Logo Home Link</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+    <td rowspan="5" class="pillar">P4. Personalization</td>
+      <td>4.1 Geolocation</td>
+      <td>20%</td>
+      <td rowspan="5" class="score" id="p4">Not Completed!</td>
+    </tr>
+    <tr>
+      <td>4.2 Account/User Profile</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>4.3 Cookie Use/Active Recommendation</td>
+      <td>30%</td>
+    </tr>
+    <tr>
+      <td>4.4 Autofill</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>4.5 Tracking Progress/Abandonment</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+    <td rowspan="5" class="pillar">P5. Site Performance</td>
+      <td>5.1 Speed of the Site</td>
+      <td>20%</td>
+      <td rowspan="5" class="score" id="p5">Not Completed!</td>
+    </tr>
+    <tr>
+      <td>5.2 Load Time of Media</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>5.3 Data Collection</td>
+      <td>35%</td>
+    </tr>
+    <tr>
+      <td>5.4 Broken Links</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <td>5.5 Search Engine Optimization</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+    <td rowspan="6" class="pillar">P6. Social Interaction</td>
+      <td>6.1 Feedback Option</td>
+      <td>25%</td>
+      <td rowspan="6" class="score" id="p6">Not Completed!</td>
+    </tr>
+    <tr>
+      <td>6.2 Subscribe/List Serve</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>6.3 Social Media Presence/Links</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+      <td>6.4 Confirmation/Notifications</td>
+      <td>25%</td>
+    </tr>
+    <tr>
+      <td>6.5 Live Chat</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>6.6 Forums</td>
+      <td>10%</td>
+    </tr>
+    <tr>
+    <td rowspan="4" class="pillar">P7. Security & Privacy</td>
+      <td>7.1 Government Regulations</td>
+      <td>35%</td>
+      <td rowspan="4" class="score" id="p7">Not Completed!</td>
+    </tr>
+    <tr>
+      <td>7.2 Security Team</td>
+      <td>15%</td>
+    </tr>
+    <tr>
+      <td>7.3 Authorization & Authentication</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>7.4 Secure Data/Information</td>
+      <td>30%</td>
+    </tr><tr>
+    <td rowspan="5" class="pillar">P8. Aesthetics</td>
+      <td>8.1 Internal Design Team</td>
+      <td>20%</td>
+      <td rowspan="5" class="score" id="p8">Not Completed!</td>
+    </tr>
+    <tr>
+      <td>8.2 Organizational Layout</td>
+      <td>25%</td>
+    </tr>
+    <tr>
+      <td>8.3 Color & Font</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>8.4 Website Multimedia</td>
+      <td>20%</td>
+    </tr>
+    <tr>
+      <td>8.5 Parallax Scrolling</td>
+      <td>15%</td>
+    </tr>
+   
+
+  </thead>
+  </table>
+
+</section>
+
+</div>
+<br><br><br><br>
+<div> 
+<div id="suggest">
+<h2>Recommendations:</h2>
+  <ol id="list">
+  <!-- <li>Needs to display top searches</li>
+  <li>Website should have a profile that retains a user’s personal information</li>
+  <li>Website should use an autofill predictive analytic</li>
+  <li>Website should use stored cookies for active recommendations</li>
+  <li>Website should provide live tracking capabilities</li>
+  <li>Website needs to adjust speed that is more suitable for the user base</li>
+  <li>Website should collect and store data analytics</li>
+  <li>Website should use a mailing list serve that users can subscribe to</li>
+  <li>Website should have a live chat feature that answers questions/concerns directly from users</li>
+  <li>Users need to have the opportunity to opt out up front</li>
+  <li>Should begin using HTTPS</li>
+  <li>The website should have loading page animation</li> -->
+  
+  </ol>
+</div>
+
+</div>
+
+<div id="alist">
+<section class="activelist">
+<div  class="tbl-norm">
+<table cellpadding="0" cellspacing="0" border="0">
+    <thead>
+    <tr>
+      <th class="tbl-empty"></th>
+      <th class="tbl-empty"></th>
+      <td colspan="9" id="tbl-title">Scores</td>
+    </tr>
+    </thead>
+    </table>
+    </div>
+    <div  class="tbl-header">
+    <table cellpadding="0" cellspacing="0" border="0">
+    <thead>
+    <tr>
+      <th class="wide">Date</th>
+      <th class="wide">Name</th>
+      <th class="wide">URL</th>
+      <th>P1</th>
+      <th>P2</th>
+      <th>P3</th>
+      <th>P4</th>
+      <th>P5</th>
+      <th>P6</th>
+      <th>P7</th>
+      <th>P8</th>
+      <th>OS</th>
+    </tr>
+  </thead>
+</table>
+</div>
+
+
+<div  class="tbl-content">
+<table cellpadding="0" cellspacing="0" border="0">
+  <tbody>
+  <tr>
+      <td class="wide">08/04/16</td>
+      <td class="wide">Benefits.gov</td>
+      <td class="wide"><a href="#">benefits.gov</a></td>
+      <td>99</td>
+      <td>100</td>
+      <td>95</td>
+      <td>45</td>
+      <td>58</td>
+      <td>70</td>
+      <td>80</td>
+      <td>93</td>
+      <td class="os">80</td>
+    </tr>
+  <tr>
+      <td class="wide">08/04/16</td>
+      <td class="wide">Benefits.gov</td>
+      <td class="wide"><a href="#">benefits.gov</a></td>
+      <td>99</td>
+      <td>100</td>
+      <td>95</td>
+      <td>45</td>
+      <td>58</td>
+      <td>70</td>
+      <td>80</td>
+      <td>93</td>
+      <td class="os">80</td>
+    </tr>
+    <tr>
+      <td class="wide">08/04/16</td>
+      <td class="wide">IRS</td>
+      <td class="wide"><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">57</td>
+    </tr>
+    <tr>
+      <td class="wide">08/03/16</td>
+      <td class="wide">Central Intelligence Agency</td>
+      <td class="wide"><a href="#">cia.gov</a></td>
+      <td>72</td>
+      <td>92</td>
+      <td>76</td>
+      <td>85</td>
+      <td>76</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">75</td>
+    </tr><tr>
+      <td class="wide">08/03/16</td>
+      <td class="wide">Benefits.gov</td>
+      <td class="wide"><a href="#">benefits.gov</a></td>
+      <td>99</td>
+      <td>100</td>
+      <td>95</td>
+      <td>45</td>
+      <td>58</td>
+      <td>70</td>
+      <td>80</td>
+      <td>93</td>
+      <td class="os">80</td>
+    </tr><tr>
+      <td class="wide">08/02/16</td>
+      <td class="wide">Department of Labor</td>
+      <td class="wide"><a href="#">dol.gov</a></td>
+      <td>98</td>
+      <td>95</td>
+      <td>88</td>
+      <td>65</td>
+      <td>76</td>
+      <td>82</td>
+      <td>95</td>
+      <td>54</td>
+      <td class="os">72</td>
+    </tr><tr>
+      <td class="wide">08/02/16</td>
+      <td class="wide">Recreation.gov</td>
+      <td class="wide"><a href="#">recreation.gov</a></td>
+      <td>100</td>
+      <td>100</td>
+      <td>100</td>
+      <td>88</td>
+      <td>92</td>
+      <td>92</td>
+      <td>98</td>
+      <td>100</td>
+      <td class="os">95</td>
+    </tr><tr>
+      <td class="wide">08/02/16</td>
+      <td class="wide">White House</td>
+      <td class="wide"><a href="#">whitehouse.gov</a></td>
+      <td>100</td>
+      <td>100</td>
+      <td>95</td>
+      <td>68</td>
+      <td>92</td>
+      <td>84</td>
+      <td>100</td>
+      <td>88</td>
+      <td class="os">87</td>
+    </tr><tr>
+      <td class="wide">08/01/16</td>
+      <td class="wide">Data.gov</td>
+      <td class="wide"><a href="#">data.gov</a></td>
+      <td>100</td>
+      <td>98</td>
+      <td>88</td>
+      <td>54</td>
+      <td>72</td>
+      <td>32</td>
+      <td>97</td>
+      <td>88</td>
+      <td class="os">72</td>
+    </tr><tr>
+      <td class="wide">08/01/16</td>
+      <td class="wide">Booz Allen Hamilton</td>
+      <td class="wide"><a href="#">bah.com</a></td>
+      <td>100</td>
+      <td>99</td>
+      <td>95</td>
+      <td>87</td>
+      <td>91</td>
+      <td>76</td>
+      <td>69</td>
+      <td>82</td>
+      <td class="os">88</td>
+    </tr><tr>
+      <td class="wide">07/31/16</td>
+      <td class="wide">IRS</td>
+      <td class="wide"><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">57</td>
+    </tr><tr>
+      <td class="wide">07/25/16</td>
+      <td class="wide">IRS</td>
+      <td class="wide"><a href="#">irs.gov</a></td>
+      <td>55</td>
+      <td>86</td>
+      <td>95</td>
+      <td>48</td>
+      <td>52</td>
+      <td>85</td>
+      <td>68</td>
+      <td>51</td>
+      <td class="os">57</td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
+
+</section>
+</div>
+<p id="activecap">OS stands for "Overall Score"</p>
+</div>
+        <div class="startova">
+         <a class="btn btn-success first" href="" onClick="window.location.reload()" data-ng-click="goNext(0)">Start over</a>
+      </div>
+      <img src="wrapplogo.png" alt="WRAPP Logo" class="wrapplogo">
+        <img src="booz-allen-logo.png" alt="Booz Allen Hamilton Logo" class="boozlogo">
+
+   
+  
+
+
+
+  
+
+       
+        <script type='text/javascript'>
+        
+            var myApp = angular.module('myApp', []);
+            var r = 0;
+function Main($scope, $http){
+  var p = 1;
+  $scope.goNext = function(p){
+
+  if(r < 5) {
+    Validation();
+  }
+  else {
+    $('[href=#step'+(p+1)+']').tab('show');
+  
+    return false;
+  }
+
+$('#submittin').prop('disabled', true);
+  }
+  
+}
+(function($){
+
+$(document).ready(function() {
+
+  // use jQuery to update progress bar
+  $('a[data-toggle="tab"]').on('shown.bs.tab', function (e) {
+    
+    //update progress
+    var step = $(e.target).data('step');
+    var percent = (parseInt(step) / 10) * 100;
+    
+    $('.progress-bar').css({width: percent + '%'});
+    $('.progress-bar').text("Step " + step + " of 10");
+    
+  });
+
+});
+
+  
+})(jQuery);  
+  var p1Priority = 1, p2Priority = 3, p3Priority = 5, p4Priority = 7;
+  var p5Priority = 0, p6Priority = 0, p7Priority = 0, p8Priority = 0; 
+  var userPillar8 = [2, 4, 6, 8];
+
+var p1Percent = .19;
+var p2Percent = 0;
+var p3Percent = .17;
+var p4Percent = 0;
+var p5Percent = .14;
+var p6Percent = 0;
+var p7Percent = .13;
+var p8Percent = 0;
+var numberOfChBox = 0;
+var checkArray = new Array(); 
+var url = "";
+var title = "";
+var name = "";
+var p1 = 0;
+var p2 = 0;
+var UserCMS = "";
+var p3 = 0;
+var p4 = 0;
+var p5 = 0;
+var p6 = 0;
+var p7 = 0;
+var p8 = 0;
+var tp1 = 0;
+var tp2 = 0;
+var tp3 = 0;
+var tp4 = 0;
+var tp5 = 0;
+var tp6 = 0;
+var tp7 = 0;
+var tp8 = 0;
+var total = 0;
+var numRad = $("input[type=radio]").length;
+var rads = 0;
+
+
+
+
+
+
+// Found this on stackoverflow. It's a function that 
+// returns an array of the mode of an array
+function findMode(array) {
+  var modeMap = new Array(); maxCount = 1, modes = [array[0]];
+
+  for(var i = 0; i < array.length; i++) {
+    var el = array[i];
+    modeMap[el]++;
+
+    if(modeMap[el] > maxCount) {
+      modes = [el];
+      maxCount = modeMap[el];
+    }
+    else if(modeMap[el] == maxCount) {
+      modes.push(el);
+      maxCount = modeMap[el];
+    }
+  }
+  return modes;
+}
+
+// I'm not exactly sure how javascript functions are used/called
+// So you might have to double check my function signature, the function() {} part
+// Just keep in mind I didn't compile/test any of these, so there might be some
+// syntax errors. I commented as best I could so the logic is understandable
+function pillaPriority(checkArray){
+
+  // The premade prioritization table we made
+  var pTable = [[.01,4,2,8,6],[.02,4,6,2,8],[.03,2,8,4,6],
+        [.04,4,8,6,2],[.05,4,6,2,8],[.06,6,2,4,8],
+        [.07,8,4,6,2],[.08,4,8,2,6],[.09,4,2,8,6],
+        [.10,6,4,2,8],[.11,6,4,2,8],[.12,4,8,2,6]];
+
+  // Some sample input I made to test
+  // var userInput = [1,1,0,1,1,1,0,0,1,1,0,0];
+  
+  // userArray is a 2-D array that is derived from the pTable and
+  // corresponding values of userInput. 
+  var userArray = new Array();
+  var countPush = 0;  // Counts how many rows the array will have
+  for (var i = 0; i < 12; i++) {
+    if(checkArray[i] == 1) {
+      // We push the table row in if user answers with a Yes 
+      // for a certain subpillar
+      userArray.push(pTable[i]);  
+      countPush++;
+    }
+  }
+
+  // THIS IS HOW ALGORITHM WORKS
+  // We create an array for each pillar, then we sort out each pillar
+  // so that it becomes easy to remove elements. We remove elements for
+  // prioritization values that have been taken by a pillar, so that way 
+  // we ensure no values get repeated when we assign them to pillars.
+  // We use the findMode function to determine the mode(s) of an array.
+  // We then determine which mode to use.
+
+
+  // We set up an Array for Pillar 5
+  var userPillar5 = new Array();
+  for(var i = 0; i < countPush; i++) {
+    userPillar5[i] = (userArray[i][1]);
+  }
+
+  // Sort the array to make it easy to remove elements
+  userPillar5.sort();
+
+  var mode5 = findMode(userPillar5);
+  if(mode5.length == 1)
+    p5Priority = mode5[0];
+  else {  // if there is tie
+    for(var i = 0; i < mode5.length; i++) {
+      // DEFAULT case for Pillar5 is 4
+      if(mode5[i] == 4) 
+        p5Priority = 4;
+    }
+    if(p5Priority == 0) {
+      // If not 4, we'll just take first element from mode array
+      p5Priority = mode5[0];
+      // for(var j = 0; j < mode5.length; j++) {
+      //  if(mode5[i] == 8)
+      //    p5Priority = 8;
+      // }
+    }   
+
+  }
+      for (var j = 0; j < userPillar8.length; j++) {
+        if(userPillar8[j] == p5Priority) {
+          userPillar8.splice(j,1);
+          j--;
+        }
+      }
+
+
+
+  var userPillar6 = new Array();
+  for(var i = 0; i < countPush; i++) {
+    userPillar6.push(userArray[i][2]);
+  }
+
+  userPillar6.sort();
+  // We want to remove p5Priority from the list so we can avoid reusing
+  for(var i = 0; i < countPush; i++) {
+    if(userPillar6[i] == p5Priority){
+      userPillar6.splice(i, p5Priority);
+      i--;
+    }
+  }
+
+  var mode6 = findMode(userPillar6);
+  if(mode6.length == 1) 
+    p6Priority = mode6[0];
+  else {  // in event of tie
+    for(var i = 0; i < mode6.length; i++) {
+      if(mode6[i] == 8 && p5Priority != 8)
+        p6Priority = 8;
+    }
+    if(p6Priority == 0 && mode6[0] != p5Priority) {
+      p6Priority = mode6[0];
+    } 
+    else 
+      p6Priority = mode6[1];
+  }
+
+    for (var j = 0; j < userPillar8.length; j++) {
+        if(userPillar8[j] == p6Priority) {
+          userPillar8.splice(j,1);
+          j--;
+        }
+      }
+
+
+  var userPillar7 = new Array();
+  for(var i = 0; i < countPush; i++) {
+    userPillar7.push(userArray[i][3]);
+  }
+
+  userPillar7.sort();
+  for(var i = 0; i < countPush; i++) {
+    // We need to remove both p5Priority and p6Priority
+    if(userPillar7[i] == p5Priority) {
+      userPillar7.splice(i, p5Priority);
+      i--;
+    }
+    else if(userPillar7[i] == p6Priority) {
+      userPillar7.splice(i, p6Priority);
+      i--;
+    }
+  }
+
+  var mode7 = findMode(userPillar7);
+  if(mode7.length == 1) 
+    p7Priority = mode7[0];
+  else {  // in event of tie
+    for(var i = 0; i < mode6.length; i++) {
+      // Default case for Pillar 7 is 2. We need to check 
+      // if Pillar 5 or 6 use 2
+      if(mode7[i] == 2 && p5Priority != 2 && p6Priority != 2)
+        p6Priority = 8;
+    }
+    if(p7Priority == 0 && mode7[0] != p5Priority && mode7[0] != p6Priority) {
+      p7Priority = mode7[0];
+    } 
+    else 
+      p6Priority = mode6[1];
+  }
+
+      for (var j = 0; j < userPillar8.length; j++) {
+        if(userPillar8[j] == p7Priority) {
+          userPillar8.splice(j,1);
+          j--;
+        }
+      }
+
+  // var userPillar8 = new Array();
+  // for(var i = 0; i < countPush; i++) {
+  //   userPillar8.push(userArray[i][4]);
+  // }
+
+  // userPillar8.sort();
+  // alert(userPillar8);
+  // for(var i = 0; i < countPush; i++) {
+  //   // We need to remove p5Priority, p6Priority and p7Priority
+  //   if(userPillar8[i] == p5Priority) {
+  //     userPillar8.splice(i, p5Priority);
+  //     i--;
+  //   }
+  //   else if(userPillar8[i] == p6Priority) {
+  //     userPillar8.splice(i, p6Priority);
+  //     i--;
+  //   }
+  //   else if(userPillar8[i] == p7Priority) {
+  //     userPillar8.splice(i, p7Priority);
+  //     i--;
+  //   }
+  // }
+
+  // We removed every element except for the last value
+  p8Priority = userPillar8[0];
+  // NOT SURE HOW YOU WANT ME TO RETURN THE PILLAR VALUES, 
+  // so I'll return an array. 
+  // Array[0] = Pillar 5
+  // Array[1] = Pillar 6
+  // Array[2] = Pillar 7
+  // Array[3] = Pillar 8
+
+  var returnArray = new Array();
+  returnArray.push(userPillar5);
+  returnArray.push(userPillar6);
+  returnArray.push(userPillar7);
+  returnArray.push(userPillar8);
+
+  return returnArray;
+}
+
+
+
+function P1State() {
+  numOfRad = $('input[name="responsive"]').length;
+  radArray1 = new Array();
+
+  for(i = 0; i <= numOfRad; i ++) {
+    if($('input[name="responsive"]:checked').val() == 0) {
+      radArray1[i] = "The site needs to be more Responsive!"
+    }
+  }
+//   alert(radArray1);
+}
+
+
+function info() {
+    
+    numberOfChBox = $('.cbox').length;
+    checkArray = new Array(); 
+
+    for(i = 1; i <= numberOfChBox; i++) {
+
+        if($('#chkBox' + i).is(':checked')) {
+            checkArray[i-1] = 1;  
+        } else {
+        checkArray[i-1] = 0;
+        }
+    }
+    
+    Validation();
+
+    pillaPriority(checkArray);
+  // document.getElementById("cbResults").innerHTML = cbResults;
+
+
+
+
+
+              title = $('input[name="title"]').val();
+              url = $('input[name="url"]').val();
+              name = $('input[name="name"]').val();
+  
+
+  document.getElementById("Atitle").innerHTML = title;
+
+};
+
+ var defaultLocation = "http://ec2-52-206-22-184.compute-1.amazonaws.com/html/";
+var sum = 0;
+function Validation() {
+
+
+
+
+
+
+
+
+    for (i = 0; i < numberOfChBox; i++) {
+        sum += checkArray[i];
+    }
+    if (sum == 0) {
+  swal(
+      'Ooops...',
+      'You must select at least one Site Offering or Target Audience Demographic',
+      'error'
+)
+   window.setTimeout(function(){
+            // redirect to default location
+            window.location.href = defaultLocation;
+        },2000); // set timeout in ms
+     
+    } else {
+       r += 1;
+    }
+
+    if ($('input[name="url"]').val() == "") {
+      swal(
+      'Ooops...',
+      'You must enter the website URL!',
+      'error'
+)
+
+     window.setTimeout(function(){
+            // redirect to default location
+            window.location.href = defaultLocation;
+        },2000); // set timeout in ms
+    
+    } else {
+        r += 1;
+    }
+  
+
+     if ($('input[name="name"]').val() == "") {
+      swal (
+        'Ooops...',
+        'You must enter an Email Address!',
+        'error'
+        )
+      window.setTimeout(function(){
+            // redirect to default location
+            window.location.href = defaultLocation;
+        },2000); // set timeout in ms
+    
+    } else {
+        r += 1;
+    }
+
+     if ($('input[name="title"]').val() == "") {
+
+     swal (
+        'Ooops...',
+        'You must enter the Company/Agency Name!',
+        'error'
+        )
+      window.setTimeout(function(){
+            // redirect to default location
+            window.location.href = defaultLocation;
+        },2000); // set timeout in ms
+    
+    } else {
+        r += 1;
+    }
+
+    if ($('input[name="name"]').val() != "") {
+    ValidateEmail();
+  }
+}
+
+
+var yay = 0;
+function ValidateEmail() {
+  var mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;  
+  if($('input[name="name"]').val().match(mailformat))  {
+    yay = 1;
+    r += 1;
+    return r;
+
+}
+else {
+  swal (
+        'Ooops...',
+        'You have entered an invalid email address!',
+        'error'
+        )
+      window.setTimeout(function(){
+            // redirect to default location
+            window.location.href = defaultLocation;
+        },2000); // set timeout in ms
+}
+};
+
+          function Pilla1() {
+            Validation();
+
+  var response = $('input[name="responsive"]:checked').val();
+  var multi = $('input[name="multiling"]:checked').val();
+ 
+  var browser = $('input[name="browser"]:checked').val();
+  var fiveOeight = $('input[name="508"]:checked').val();
+
+$('input[name="adapt"]:checked').val();
+
+  var numOfChBox = $('.chkbox').length;
+    var adapt = 0;
+
+    for(i = 1; i <= numOfChBox; i++) {
+
+        if($('#ckBox' + i).is(':checked')) {
+            adapt += Number($('#ckBox' + i).val()); 
+        } else {
+            adapt = adapt;
+        }
+    }
+    
+
+ var pillar1 = Number(response) + Number(multi) + adapt + Number(browser) + Number(fiveOeight);
+ pillar1 = pillar1 * 100;
+ p1 = pillar1.toFixed(2);
+document.getElementById("p1").innerHTML = p1 + "%";
+
+
+var tT = (tp1 + tp2 + tp3 + tp4 + tp5 + tp6 + tp7 + tp8);
+total = tT.toFixed(2);
+document.getElementById("score").innerHTML = total + "%";
+// alert("something");
+//  if ($('input[name="multiling"]:checked').length < 1) {
+//     // do something here
+//     alert("Please Select one!");
+    
+// }
+}
+
+
+
+function Pilla2() {
+Validation();
+
+  var about = $('input[name="about"]:checked').val();
+  var FAQ = $('input[name="FAQ"]:checked').val();
+  var contact = $('input[name="contact"]:checked').val();
+  var fourOfour = $('input[name="404"]:checked').val();
+  var Proofread = $('input[name="proofread"]:checked').val();
+  var cite = $('input[name="citation"]:checked').val();
+  var current = $('input[name="uptodate"]:checked').val();
+  var article = $('input[name="article"]:checked').val();
+  var transparent = $('input[name="transparent"]:checked').val();
+  var mstate = $('input[name="mission"]:checked').val();
+  var hyperlinks = $('input[name="hyperlinks"]:checked').val();
+  var breaktext = $('input[name="breaktext"]:checked').val();
+  var endgoal = $('input[name="endgoal"]:checked').val();
+  var cms = $('input[name="CMS"]:checked').val();
+
+  var pillar2 = Number(about) + Number(FAQ) + Number(contact) + Number(fourOfour) + Number(Proofread) + Number(cite) + Number(current) + Number(article) + Number(transparent) + Number(mstate) + Number(hyperlinks) + Number(breaktext) + Number(endgoal) + Number(cms);
+  pillar2 = pillar2 *100;
+  p2 = pillar2.toFixed(2);
+
+  UserCMS = $('input[name="UserCMS"]').val();
+
+  document.getElementById("p2").innerHTML = p2 + "%";
+  
+  var tT = (tp1 + tp2 + tp3 + tp4 + tp5 + tp6 + tp7 + tp8);
+total = tT.toFixed(2);
+document.getElementById("score").innerHTML = total + "%";
+}
+
+function Pilla3() {
+Validation();
+
+  var search = $('input[name="search"]:checked').val();
+  var sbar = $('input[name="searchbar"]:checked').val();
+  var logical = $('input[name="logical"]:checked').val();
+  var recommended = $('input[name="recommended"]:checked').val();
+  var topsearch = $('input[name="topsearch"]:checked').val();
+  var homelogo = $('input[name="homelogo"]:checked').val();
+ 
+  var pillar3 = Number(search) + Number(sbar) + Number(logical) + Number(recommended) + Number(topsearch) + Number(homelogo);
+  pillar3 = pillar3 * 100;
+  p3 = pillar3.toFixed(2);
+
+  document.getElementById("p3").innerHTML = p3 + "%";
+  
+  var tT = (tp1 + tp2 + tp3 + tp4 + tp5 + tp6 + tp7 + tp8);
+total = tT.toFixed(2);
+document.getElementById("score").innerHTML = total + "%";
+}
+
+
+function Pilla4() {
+ Validation();
+  var locatpath = $('input[name="locationpath"]:checked').val();
+  var locatinfo = $('input[name="locationinfo"]:checked').val();
+  var account = $('input[name="account"]:checked').val();
+  var authentication = $('input[name="authentication"]:checked').val();
+  var cookies = $('input[name="cookies"]:checked').val();
+  var cookierecommend = $('input[name="cookierecommend"]:checked').val();
+  var autofill = $('input[name="autofill"]:checked').val();
+  var progress = $('input[name="progress"]:checked').val();
+  var livetracking = $('input[name="livetracking"]:checked').val();
+
+  var pillar4 = Number(locatpath) + Number(locatinfo) + Number(account) + Number(authentication) + Number(cookies) + Number(cookierecommend) + Number(autofill) + Number(progress) + Number(livetracking);
+  pillar4 = pillar4 * 100;
+  p4 = pillar4.toFixed(2);
+
+  document.getElementById("p4").innerHTML = p4 + "%";
+
+var tT = (tp1 + tp2 + tp3 + tp4 + tp5 + tp6 + tp7 + tp8);
+total = tT.toFixed(2);
+document.getElementById("score").innerHTML = total + "%";
+}
+
+function Pilla5(){
+Validation();
+
+  var css = $('input[name="CSS"]:checked').val();
+  var reduced = $('input[name="reduced"]:checked').val();
+  var reasonablespeed = $('input[name="reasonablespeed"]:checked').val();
+  var loadtime = $('input[name="loadtime"]:checked').val();
+  var collectdata = $('input[name="collectdata"]:checked').val();
+  var accessdata = $('input[name="accessdata"]:checked').val();
+  var activelinks = $('input[name="activelinks"]:checked').val();
+  var seo = $('input[name="seo"]:checked').val();
+
+  var pillar5 = Number(css) + Number(reduced) + Number(reasonablespeed) + Number(loadtime) +Number(collectdata) + Number(accessdata) + Number(activelinks) + Number(seo);
+  pillar5 = pillar5 * 100;
+  p5 = pillar5.toFixed(2);
+
+  document.getElementById("p5").innerHTML = p5 + "%";
+  
+  var tT = (tp1 + tp2 + tp3 + tp4 + tp5 + tp6 + tp7 + tp8);
+total = tT.toFixed(2);
+document.getElementById("score").innerHTML = total + "%";
+} 
+
+
+function Pilla6() {
+  Validation();
+
+  var feedback = $('input[name="feedback"]:checked').val();
+  var sub = $('input[name="listserve"]:checked').val();
+  var socialmedia = $('input[name="socialmedia"]:checked').val();
+  var social = $('input[name="social"]:checked').val();
+  var confirm = $('input[name="confirm"]:checked').val();
+  var livechat = $('input[name="livechat"]:checked').val();
+  var forums = $('input[name="forums"]:checked').val();
+
+  var pillar6 = Number(feedback) + Number(sub) + Number(socialmedia) + Number(social) + Number(confirm) + Number(livechat) + Number(forums);
+  pillar6 = pillar6 * 100;
+  p6 = pillar6.toFixed(2);
+
+  document.getElementById("p6").innerHTML = p6 + "%";
+ 
+ var tT = (tp1 + tp2 + tp3 + tp4 + tp5 + tp6 + tp7 + tp8);
+total = tT.toFixed(2);
+document.getElementById("score").innerHTML = total + "%";
+}
+
+
+function Pilla7() {
+  Validation();
+
+  var fedprivacy = $('input[name="800-53"]:checked').val();
+  var fedISO = $('input[name="800-122"]:checked').val();
+  var privacyact = $('input[name="privacyact"]:checked').val();
+  var paperwork = $('input[name="paperwork"]:checked').val();
+  var egovernment = $('input[name="egovernment"]:checked').val();
+  var omb = $('input[name="OMB"]:checked').val();
+  var coppa = $('input[name="COPPA"]:checked').val();
+  var security = $('input[name="security"]:checked').val();
+  var checkthreat = $('input[name="checkthreat"]:checked').val();
+  var risktest = $('input[name="risktest"]:checked').val();
+  var infosecure = $('input[name="infosecure"]:checked').val();
+  var ddos = $('input[name="DDOS"]:checked').val();
+  var pii = $('input[name="PII"]:checked').val();
+  var unsubscribe = $('input[name="unsubscribe"]:checked').val();
+  var optout = $('input[name="optout"]:checked').val();
+  var https = $('input[name="HTTPS"]:checked').val();
+  var international = $('input[name="international"]:checked').val();
+
+  var pillar7 = Number(fedprivacy) + Number(fedISO) + Number(privacyact) + Number(paperwork) + Number(egovernment) + Number(omb) + Number(coppa) + Number(security) + Number(checkthreat) + Number(risktest) + Number(infosecure) + Number(ddos) + Number(pii) + Number(unsubscribe) + Number(optout) + Number(https) + Number(international);
+  pillar7 = pillar7 * 100;
+  p7 = pillar7.toFixed(2);
+
+document.getElementById("p7").innerHTML = p7 + "%";
+
+var tT = (tp1 + tp2 + tp3 + tp4 + tp5 + tp6 + tp7 + tp8);
+total = tT.toFixed(2);
+document.getElementById("score").innerHTML = total + "%";
+ 
+}
+
+function Pilla8(){
+  Validation();
+
+var radArray = new Array(); 
+var finalState = new Array();
+
+var noTable = [['1','Needs to improve Responsiveness score to be 85 or greater'], 
+                                              ['1','Needs multilingual feature'], 
+                                              ['1', 'Needs to improve browser compatibility'], 
+                                              ['1', 'Needs to be 508 compliant'], 
+                                              ['2', 'Needs "About Us" page'], 
+                                              ['2', 'Needs "FAQ" page'], 
+                                              ['2', 'Needs "Contact" page'], 
+                                              ['2', 'Needs a "404 Error" page'], 
+                                              ['2', 'Needs to be checked for grammar and spelling errors'], 
+                                              ['2', 'Needs to provide citations'], 
+                                              ['2', 'Needs to provide accurate and up-to-date content'], 
+                                              ['2', 'Needs to provide informative news articles'], 
+                                              ['2', 'Needs to be transparent'], 
+                                              ['2', 'Needs to have a relevant and accurate mission'], 
+                                              ['2', 'Needs hyperlinks'], 
+                                              ['2', 'Needs to break up text with multimedia'], 
+                                              ['2', 'Needs an obvious end goal and purpose of the site'], 
+                                              ['2', 'Needs a Content Management System'], 
+                                              ['3', 'Needs a search bar'], 
+                                              ['3', 'Needs a visible and accessible search bar on every page'], 
+                                              ['3', 'Needs a logical user path'], 
+                                              ['3', 'Needs additional links'], 
+                                              ['3', 'Needs to show top searches'], 
+                                              ['3', 'Needs a clear website logo on every page'], 
+                                              ['4', 'Website should customize ads and suggest a path based on user location'], 
+                                              ['4', 'Website should tailor information to a user\'s location'], 
+                                              ['4', 'Website should have a profile that retains a user\'s personal information'], 
+                                              ['4', 'Website should use security protocol\'s for authentication and authorization'], 
+                                              ['4', 'Website should consider cookie usage to enhance user experience'], 
+                                              ['4', 'Website should use stored cookies for active recommendations'], 
+                                              ['4', 'Website should use an autofill predictive analytic'], 
+                                              ['4', 'Website should show user progress in a form and provides status updates'], 
+                                              ['4', 'Website should provide live tracking capabilities'], 
+                                              ['5', 'CSS and Javascript should be minified on website'], 
+                                              ['5', 'Website should reduce files to smaller sizes'], 
+                                              ['5', 'Website needs to enhance speed'], 
+                                              ['5', 'Website needs to speed up multimedia load time'], 
+                                              ['5', 'Website should collect and store data analytics'], 
+                                              ['5', 'Website should store data that easily accessible and updated frequently'], 
+                                              ['5', 'Website needs to have active and functioning links'], 
+                                              ['5', 'Consider including key words to increase SEO'], 
+                                              ['6', 'Website should have feedback section where users can post comments/suggestions'], 
+                                              ['6', 'Website should use a mailing list serve that users can subscribe to'], 
+                                              ['6', 'Website needs to enhance social media presence on a variety of suitable platforms'], 
+                                              ['6', 'Website needs to improve visible links to the site\'s social media accounts'], 
+                                              ['6', 'Website needs to provide a confirmation page or alert for form completion, submission etc.'], 
+                                              ['6', 'Website should have a live chat feature that answers questions/concerns directly from users'], 
+                                              ['6', 'Website should have a community board or instant chat for user base interaction'], 
+                                              ['7', 'Website should be compliant with NIST 800-53'], 
+                                              ['7', 'Website should be compliant with NIST 800-122'], 
+                                              ['7', 'Website should be compliant with the Privacy Act of 1974'], 
+                                              ['7', 'Website should be compliant with the Paperwork Reduction Act of 1995'], 
+                                              ['7', 'Website should be compliant with the E-Government Act of 2002'], 
+                                              ['7', 'Website should be compliant with the Office of Management and Budget'], 
+                                              ['7', 'Website should be compliant with the Children\'s Online Privacy Protection Act'], 
+                                              ['7', 'There should be staff who update protocols and scan for possible vulnerabilities in the website'], 
+                                              ['7', 'Staff should frequently check for threats to the system and constantly update the site'], 
+                                              ['7', 'Staff should establish risk tests and protocols to effectively mitigate possible risk'], 
+                                              ['7', 'Staff should analyze the privacy practices of the website to ensure that user information is appropriately secure'], 
+                                              ['7', 'Staff should review preventative security protocols to stop Distributed Denial of Service (DDOS)'], 
+                                              ['7','Website should have an appropriate framework in place for authorization and authentication if it collects Personal Identifiable Information (PII)'], 
+                                              ['7', 'Website should continually maintain user PII and allow user choice by offering the option to unsubscribe'], 
+                                              ['7', 'It should be transparent that users have the option to opt out of data collection'], 
+                                              ['7', 'Website should be using HTTPS'], 
+                                              ['7', 'Website should comply with International Guidelines'], 
+                                              ['8', 'The website should have an internal design staff'], 
+                                              ['8', 'The internal design staff should use web analytics and ongoing feedback to continuously improve the site\'s design'], 
+                                              ['8', 'The call to action of the website (for example, a "get started" button), should be presented immediately and above the fold of the front page'], 
+                                              ['8', 'The menu bar and contact information should be visible on every subsequent page of the website'], 
+                                              ['8', 'Every subsequent page of the website should follow a consistent design'], 
+                                              ['8', 'All buttons on the website should have a consistent color, style, shape, or texture'], 
+                                              ['8', 'The website should implement a flat and minimalist design format'], 
+                                              ['8', 'The website should have a menu that is hamburger style that provides intuitive and user-friendly navigation'], 
+                                              ['8', 'Every page should have a consistent and simple typography and font'], 
+                                              ['8', 'The size and color of the font should be suitable to the targeted user base'], 
+                                              ['8', 'The colors and text used on the website should comply with the WCAG AA 2.0 guidelines'], 
+                                              ['8', 'The website should display large headings and options for "further reading" or "read more" if there are large amounts of text'], 
+                                              ['8', 'The website should have custom HD images as opposed to stock images'], 
+                                              ['8', 'The website should have a loading page animation'], 
+                                              ['8', 'The website should use hover animation over text and multimedia'], 
+                                              ['8', 'The website should employ parallax scrolling']]; 
+
+
+
+
+
+
+
+
+  var team = $('input[name="team"]:checked').val();
+  var webdata = $('input[name="webdata"]:checked').val();
+  var action = $('input[name="action"]:checked').val();
+  var visible = $('input[name="visible"]:checked').val();
+  var condesign = $('input[name="condesign"]:checked').val();
+  var concolor = $('input[name="concolor"]:checked').val();
+  var typedesign = $('input[name="typedesign"]:checked').val();
+  var hamburger = $('input[name="hamburger"]:checked').val();
+  var contypo = $('input[name="contypo"]:checked').val();
+  var targetfont = $('input[name="targetfont"]:checked').val();
+  var wcag = $('input[name="WCAG"]:checked').val();
+  var readmore = $('input[name="readmore"]:checked').val();
+  var customimages = $('input[name="customimages"]:checked').val();
+  var loading = $('input[name="loading"]:checked').val();
+  var hover = $('input[name="hover"]:checked').val();
+  var parallax = $('input[name="parallax"]:checked').val();
+
+  var pillar8 = Number(team) + Number(webdata) + Number(action) + Number(visible) + Number(condesign) + Number(concolor) + Number(typedesign) + Number(hamburger) + Number(contypo) + Number(targetfont) + Number(wcag) + Number(readmore) + Number(customimages) + Number(loading) + Number(hover) + Number(parallax);
+  pillar8 = pillar8 *100;
+  p8 = pillar8.toFixed(2);
+
+
+document.getElementById("p8").innerHTML = p8 + "%";
+
+
+if(p5Priority == 2) 
+              p2Percent = .12;
+else if(p5Priority == 4)
+              p4Percent = .12;
+else if(p5Priority == 6)
+              p6Percent = .12;
+else
+              p8Percent = .12;
+
+if(p6Priority == 2) 
+              p2Percent = .10;
+else if(p6Priority == 4)
+              p4Percent = .10;
+else if(p6Priority == 6)
+              p6Percent = .10;
+else
+              p8Percent = .10;
+
+
+if(p7Priority == 2) 
+              p2Percent = .08;
+else if(p7Priority == 4)
+              p4Percent = .08;
+else if(p7Priority == 6)
+              p6Percent = .08;
+else
+              p8Percent = .08;
+
+
+if(p8Priority == 2) 
+              p2Percent = .07;
+else if(p8Priority == 4)
+              p4Percent = .07;
+else if(p8Priority == 6)
+              p6Percent = .07;
+else
+              p8Percent = .07;
+
+tp1 = p1*p1Percent;
+tp2 = p2*p2Percent;
+tp3 = p3*p3Percent;
+tp4 = p4*p4Percent;
+tp5 = p5*p5Percent;
+tp6 = p6*p6Percent;
+tp7 = p7*p7Percent;
+tp8 = p8*p8Percent;
+
+var tT = (tp1 + tp2 + tp3 + tp4 + tp5 + tp6 + tp7 + tp8);
+total = tT.toFixed(2);
+
+$('#submittin').prop('disabled', false);
+
+document.getElementById("score").innerHTML = total + "%";
+radArray = [];
+
+$("input[type=radio]:checked").each(function(){
+  
+  if(typeof ($(this).val()) == "undefined"){
+    alert($(this).val());
+  } else {
+  radArray.push($( this ).val());  
+            rads += 1;
+          }
+});
+
+    var pStatements = new Array();
+    var count = 0;
+    for(var k = 0; k < radArray.length; k++) {
+      if(radArray[k] == 0){
+        // alert("this is k" + k);
+        pStatements.push(noTable[k]);
+      } else {
+        count += 1;
+      }
+    } 
+    
+    // // alert(p5Priority);
+    // alert(p6Priority);
+    // alert(p7Priority);
+    // alert(p8Priority);
+// alert(weights + "BEFORE");
+
+//     var weights = new Array(['1', p1Percent],
+//                             ['2', p2Percent],
+//                             ['3', p3Percent],
+//                             ['4', p4Percent],
+//                             ['5', p5Percent],
+//                             ['6', p6Percent],
+//                             ['7', p7Percent],
+//                             ['8', p8Percent])
+
+//     weights.sort(function(a,b) {
+//       return a[1] < b[1];
+//     });
+//     alert("this is it sorted" + weights)
+
+
+
+var newpStatement = new Array();
+
+for(var z = 0; z < pStatements.length; z++) {
+              var temp3 = pStatements[z];
+              if((pStatements[z][0]) == '1') {
+                             temp3.push(p1Percent);
+              }
+              else if((pStatements[z][0]) == '2') {
+                             temp3.push(p2Percent);
+              }
+              else if((pStatements[z][0]) == '3') {
+                             temp3.push(p3Percent);
+              }
+              else if((pStatements[z][0]) == '4') {
+                             temp3.push(p4Percent);
+              }
+              else if((pStatements[z][0]) == '5') {
+                             temp3.push(p5Percent);
+              }
+              else if((pStatements[z][0]) == '6') {
+                             temp3.push(p6Percent);
+              }
+              else if((pStatements[z][0]) == '7') {
+                             temp3.push(p7Percent);
+              }
+              else if((pStatements[z][0]) == '8') {
+                             temp3.push(p8Percent);
+              }
+
+              newpStatement.push(temp3);
+}
+
+     newpStatement.sort(function(a,b) {
+      return a[2] < b[2];
+    });
+     // alert(newpStatement);
+
+    // for(var h = 0; h < pStatements.length; h++) {
+    //   var temp = (pStatements[h][0]);
+    //   if(temp[0].charAt(0) == p1Priority.toString()) {
+    //     finalState.push(pStatements[h][1]);
+    //   } 
+    //   if(temp[0].charAt(0) == p2Priority.toString()) {
+    //     finalState.push(pStatements[h][1]);
+    //   } 
+    //   if(temp[0].charAt(0) == p3Priority.toString()) {
+    //     finalState.push(pStatements[h][1]);
+    //   } 
+    //   if(temp[0].charAt(0) == p4Priority.toString()) {
+    //     finalState.push(pStatements[h][1]);
+    //   } 
+    //   if(temp[0].charAt(0) == p5Priority.toString()) {
+    //     finalState.push(pStatements[h][1]);
+    //   } 
+    //   if(temp[0].charAt(0) == p6Priority.toString()) {
+    //     finalState.push(pStatements[h][1]);
+    //   } 
+    //   if(temp[0].charAt(0) == p7Priority.toString()) {
+    //     finalState.push(pStatements[h][1]);
+    //   } 
+    //   if(temp[0].charAt(0) == p8Priority.toString()) {
+    //     finalState.push(pStatements[h][1]);
+    //   } 
+    //     alert(finalState);
+    // }  
+    
+// for(var f = 0; f < finalState.length; f++) {
+//       document.getElementById("suggest").innerHTML +=  "<li>" + (finalState[f][1]).toString() + "</li>";
+//     }
+var kk = "";
+
+ for(f = 0; f < newpStatement.length; f++){
+        var list = (newpStatement[f][1]);
+        kk += "<li>"+list+"</li>"
+        alert(kk);
+
+    }
+var MyList = document.getElementById('list');        
+MyList.innerHTML = kk;
+// alert(kk);
+
+
+
+};
+function sendResults() {
+
+var today = new Date();
+var dd = today.getDate();
+var mm = today.getMonth()+1; //January is 0!
+var yyyy = today.getFullYear();
+
+if(dd<10) {
+    dd='0'+dd
+} 
+
+if(mm<10) {
+    mm='0'+mm
+} 
+
+today = mm+'/'+dd+'/'+yyyy;
+
+
+function post() {
+              var date = today;
+              title = $('input[name="title"]').val();
+              url = $('input[name="url"]').val();
+              name = $('input[name="name"]').val();
+              var P1 = tp1;
+              var P2 = tp2;
+              var P3 = tp3;
+              var P4 = tp4
+              var P5 = tp5;
+              var P6 = tp6;
+              var P7 = tp7;
+              var P8 = tp8;
+              var OS = total;
+$.post('insertResult.php',{postD:date,postTITLE:title,postURL:url,postNAME:name,postP1:P1,postP2:P2,postP3:P3,postP4:P4,postP5:P5,postP6:P6,postP7:P7,postP8:P8,postOS:OS}, 
+                             // function(result) {
+                             //               alert(result);
+                             // });
+}
+};
+
+
+
+
+
+        </script>
+        
+ 
+        
+        
+    </body>
+</html>
