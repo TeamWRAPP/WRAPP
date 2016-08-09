@@ -2424,7 +2424,7 @@ var kk = "";
  for(f = 0; f < newpStatement.length; f++){
         var list = (newpStatement[f][1]);
         kk += "<li>"+list+"</li>"
-        alert(kk);
+        // alert(kk);
 
     }
 var MyList = document.getElementById('list');        
@@ -2451,7 +2451,8 @@ if(mm<10) {
     mm='0'+mm
 } 
 
-today = mm+'/'+dd+'/'+yyyy;
+today = mm.toString()+'/'+dd.toString()+'/'+yyyy.toString();
+alert(today);
 
               var date = today;
               // title = $('input[name="title"]').val();
@@ -2466,7 +2467,9 @@ today = mm+'/'+dd+'/'+yyyy;
               // var P7 = tp7;
               // var P8 = tp8;
               // var OS = total;
-$.post('copyinsert.php',{postTITLE:title,postURL:url,postNAME:name,postP1:p1,postP2:p2,postP3:p3,postP4:p4,postP5:p5,postP6:p6,postP7:p7,postP8:p8,postOS:total})
+
+
+$.post('copyinsert.php',{postTITLE:title.toString(),postURL:url.toString(),postNAME:name.toString(),postP1:p1.toString(),postP2:p2.toString(),postP3:p3.toString(),postP4:p4.toString(),postP5:p5.toString(),postP6:p6.toString(),postP7:p7.toString(),postP8:p8.toString(),postOS:total.toString()})
                              // function(result) {
                              //               alert(result);
                              // });
