@@ -2454,19 +2454,19 @@ if(mm<10) {
 today = mm+'/'+dd+'/'+yyyy;
 
               var date = today;
-              title = $('input[name="title"]').val();
-              url = $('input[name="url"]').val();
-              name = $('input[name="name"]').val();
-              var P1 = tp1;
-              var P2 = tp2;
-              var P3 = tp3;
-              var P4 = tp4
-              var P5 = tp5;
-              var P6 = tp6;
-              var P7 = tp7;
-              var P8 = tp8;
-              var OS = total;
-$.post('insertResult.php',{postD:date,postTITLE:title,postURL:url,postNAME:name,postP1:P1,postP2:P2,postP3:P3,postP4:P4,postP5:P5,postP6:P6,postP7:P7,postP8:P8,postOS:OS})
+              // title = $('input[name="title"]').val();
+              // url = $('input[name="url"]').val();
+              // name = $('input[name="name"]').val();
+              // var P1 = tp1;
+              // var P2 = tp2;
+              // var P3 = tp3;
+              // var P4 = tp4
+              // var P5 = tp5;
+              // var P6 = tp6;
+              // var P7 = tp7;
+              // var P8 = tp8;
+              // var OS = total;
+$.post('insertResult.php',{postD:date,postTITLE:title,postURL:url,postNAME:name,postP1:tp1,postP2:tp2,postP3:tp3,postP4:tp4,postP5:tp5,postP6:tp6,postP7:tp7,postP8:tp8,postOS:total})
                              // function(result) {
                              //               alert(result);
                              // });
